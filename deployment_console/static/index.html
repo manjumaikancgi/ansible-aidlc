@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Good Shepherd Deployment Console</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">Ansible deployment</p>
+          <h1>Good Shepherd Azure Release</h1>
+        </div>
+        <div class="summary-strip">
+          <div>
+            <span>Run</span>
+            <strong id="run-id">Idle</strong>
+          </div>
+          <div>
+            <span>Status</span>
+            <strong id="run-status">Ready</strong>
+          </div>
+          <div>
+            <span>Target</span>
+            <strong id="run-target">Unselected</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls-panel">
+        <label>
+          <span>Bastion</span>
+          <select id="bastion-select"></select>
+        </label>
+        <label>
+          <span>Environment</span>
+          <select id="environment-select"></select>
+        </label>
+        <label>
+          <span>Image tag</span>
+          <input id="image-tag" type="text" placeholder="repo commit default" autocomplete="off" />
+        </label>
+        <div class="button-row">
+          <button id="deploy-button" type="button">Deploy</button>
+          <button id="cancel-button" type="button" disabled>Stop</button>
+        </div>
+      </section>
+
+      <section class="workspace-grid">
+        <div class="stage-panel">
+          <div class="panel-heading">
+            <h2>Stages</h2>
+            <span id="stage-clock">Waiting</span>
+          </div>
+          <ol id="stage-list" class="stage-list"></ol>
+        </div>
+
+        <div class="detail-panel">
+          <div class="panel-heading">
+            <h2>Selection</h2>
+            <span id="selection-mode">No run</span>
+          </div>
+          <dl class="selection-grid">
+            <div>
+              <dt>Bastion host</dt>
+              <dd id="bastion-host">-</dd>
+            </div>
+            <div>
+              <dt>Connection</dt>
+              <dd id="bastion-connection">-</dd>
+            </div>
+            <div>
+              <dt>Source</dt>
+              <dd id="source-strategy">-</dd>
+            </div>
+            <div>
+              <dt>Azure auth</dt>
+              <dd id="azure-login-mode">-</dd>
+            </div>
+          </dl>
+          <div class="command-box">
+            <div class="panel-heading compact">
+              <h2>Command</h2>
+            </div>
+            <pre id="command-output">-</pre>
+          </div>
+        </div>
+
+        <div class="log-panel">
+          <div class="panel-heading">
+            <h2>Live Log</h2>
+            <button id="clear-log-button" type="button">Clear</button>
+          </div>
+          <pre id="log-output"></pre>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

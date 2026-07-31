@@ -1,0 +1,10 @@
+---
+all:
+  children:
+    deployment_controller:
+      hosts:
+        localhost:
+          ansible_connection: local
+  hosts:
+    localhost:
+      ansible_connection: local

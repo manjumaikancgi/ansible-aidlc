@@ -1,0 +1,798 @@
+---
+- name: Deploy GS POV harness agent to Azure and verify
+  hosts: "{{ gs_deployment_hosts | default('deployment_controller') }}"
+  gather_facts: false
+
+  vars:
+    gs_deployment_mode: app_only
+    gs_source_strategy: existing
+    gs_app_repo_path: "{{ ansible_env.HOME | default('/tmp') }}/gs-pov-harness-agent"
+    gs_local_app_repo_path: /Users/manju.krishnappa/workspace/cgi/cgi_github/gs-pov-harness-agent
+    gs_app_repo_url: git@github.com:manjumaikancgi/gs-pov-harness-agent.git
+    gs_app_repo_version: feature/agent-harness-no-foundry
+    gs_app_repo_force: false
+
+    gs_bootstrap_bastion: true
+    gs_bootstrap_become: true
+    gs_install_azure_cli: true
+    gs_install_azure_containerapp_extension: true
+    gs_install_terraform: "{{ gs_deployment_mode == 'terraform' }}"
+
+    gs_azure_login_mode: existing
+    gs_azure_subscription_id: "{{ lookup('env', 'AZURE_SUBSCRIPTION_ID') | default('', true) }}"
+    gs_azure_tenant_id: "{{ lookup('env', 'AZURE_TENANT_ID') | default('', true) }}"
+    gs_azure_client_id: "{{ lookup('env', 'AZURE_CLIENT_ID') | default('', true) }}"
+    gs_azure_client_secret: "{{ lookup('env', 'AZURE_CLIENT_SECRET') | default('', true) }}"
+    gs_bastion_managed_identity_principal_id: ""
+    gs_admin_seed_token: "{{ lookup('env', 'ADMIN_SEED_TOKEN') | default('', true) }}"
+
+    gs_azure_resource_group: "{{ lookup('env', 'AZURE_GS_RG') | default('RG_300000000078783_Telstra_CDE_and_CMS_PSM', true) }}"
+    gs_azure_application_tag: GS-MFA
+    gs_azure_environment_tag: dev
+
+    gs_container_app_name: ""
+    gs_acr_name: ""
+    gs_postgres_server_name: ""
+    gs_postgres_database: ""
+    gs_postgres_user: ""
+
+    gs_image_name: gs-mfa
+    gs_image_tag: ""
+    gs_skip_build: false
+    gs_tag_latest: true
+    gs_apply_db_schema: true
+    gs_seed_db: true
+    gs_script_smoke_test: true
+
+    gs_verify_application: true
+    gs_verification_retries: 18
+    gs_verification_delay_seconds: 10
+    gs_verification_endpoints:
+      - name: frontend
+        path: /
+        expected_status: 200
+      - name: app health
+        path: /api/health
+        expected_status: 200
+      - name: database health
+        path: /api/health/db
+        expected_status: 200
+      - name: seeded clients
+        path: /api/clients?limit=1
+        expected_status: 200
+
+    gs_require_terraform_tfvars: true
+    gs_terraform_apply_bootstrap: true
+    gs_terraform_auto_approve: true
+    gs_terraform_working_dir: "{{ gs_app_repo_path }}/infra/terraform"
+    gs_terraform_tfvars_local_src: ""
+    gs_terraform_tfvars_content: ""
+    gs_rsync_timeout_seconds: 900
+    gs_rsync_connect_timeout_seconds: 30
+    gs_rsync_delete_remote: true
+    gs_rsync_verbose_changes: false
+    gs_rsync_bwlimit_kbps: 0
+    gs_rsync_exclude_patterns:
+      - .git/
+      - .env
+      - .venv/
+      - .logs/
+      - .pytest_cache/
+      - .mypy_cache/
+      - "**/__pycache__/"
+      - "**/*.pyc"
+      - .DS_Store
+      - frontend/.next/
+      - frontend/node_modules/
+      - memory_store/
+      - workbook/
+      - infra/terraform/.terraform/
+      - infra/terraform/terraform.tfvars
+      - infra/terraform/*.tfstate
+      - infra/terraform/*.tfstate.*
+
+    gs_bastion_packages_debian:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - git
+      - gnupg
+      - jq
+      - lsb-release
+      - python3-apt
+      - rsync
+      - unzip
+    gs_bastion_packages_redhat:
+      - ca-certificates
+      - curl
+      - git
+      - jq
+      - rsync
+      - unzip
+
+  pre_tasks:
+    - name: Validate deployment settings
+      ansible.builtin.assert:
+        that:
+          - gs_deployment_mode in ['app_only', 'terraform']
+          - gs_source_strategy in ['existing', 'git', 'copy']
+          - gs_azure_login_mode in ['existing', 'managed_identity', 'service_principal']
+        fail_msg: "Use valid values for gs_deployment_mode, gs_source_strategy, and gs_azure_login_mode."
+
+    - name: Require Git repository URL for git source strategy
+      ansible.builtin.assert:
+        that:
+          - gs_app_repo_url | length > 0
+        fail_msg: "gs_source_strategy=git requires gs_app_repo_url."
+      when: gs_source_strategy == 'git'
+
+    - name: Require service principal variables when requested
+      ansible.builtin.assert:
+        that:
+          - gs_azure_tenant_id | length > 0
+          - gs_azure_client_id | length > 0
+          - gs_azure_client_secret | length > 0
+        fail_msg: "gs_azure_login_mode=service_principal requires tenant/client/secret variables."
+      no_log: true
+      when: gs_azure_login_mode == 'service_principal'
+
+    - name: Bootstrap Python 3 for Ansible modules when needed
+      ansible.builtin.raw: |
+        set -e
+        if command -v python3 >/dev/null 2>&1; then
+          echo PYTHON3_PRESENT
+          exit 0
+        fi
+        if command -v apt-get >/dev/null 2>&1; then
+          apt-get update -y
+          DEBIAN_FRONTEND=noninteractive apt-get install -y python3
+        elif command -v dnf >/dev/null 2>&1; then
+          dnf install -y python3
+        elif command -v yum >/dev/null 2>&1; then
+          yum install -y python3
+        else
+          echo "python3 is missing and no supported package manager was found" >&2
+          exit 1
+        fi
+        echo INSTALLED_PYTHON3
+      become: "{{ gs_bootstrap_become | bool }}"
+      register: gs_python_bootstrap
+      changed_when: "'INSTALLED_PYTHON3' in gs_python_bootstrap.stdout"
+      when: gs_bootstrap_bastion | bool
+
+    - name: Gather bastion facts
+      ansible.builtin.setup:
+        gather_subset:
+          - min
+          - env
+
+    - name: Set package architecture facts
+      ansible.builtin.set_fact:
+        gs_deb_arch: "{{ {'x86_64': 'amd64', 'aarch64': 'arm64', 'armv7l': 'armhf'}.get(ansible_architecture, ansible_architecture) }}"
+        gs_command_environment: >-
+          {{
+            {}
+            | combine({'ADMIN_SEED_TOKEN': gs_admin_seed_token} if (gs_admin_seed_token | length > 0) else {})
+            | combine({'ARM_SUBSCRIPTION_ID': gs_azure_subscription_id} if (gs_azure_subscription_id | length > 0) else {})
+          }}
+
+  tasks:
+    - name: Bootstrap Debian or Ubuntu bastion packages
+      when:
+        - gs_bootstrap_bastion | bool
+        - ansible_os_family == 'Debian'
+      become: "{{ gs_bootstrap_become | bool }}"
+      block:
+        - name: Install common Debian or Ubuntu packages
+          ansible.builtin.apt:
+            name: "{{ gs_bastion_packages_debian }}"
+            state: present
+            update_cache: true
+
+        - name: Create apt keyring directory
+          ansible.builtin.file:
+            path: /etc/apt/keyrings
+            state: directory
+            mode: "0755"
+
+        - name: Add Microsoft apt signing key
+          ansible.builtin.get_url:
+            url: https://packages.microsoft.com/keys/microsoft.asc
+            dest: /etc/apt/keyrings/microsoft.asc
+            mode: "0644"
+          when: gs_install_azure_cli | bool
+
+        - name: Add Azure CLI apt repository
+          ansible.builtin.apt_repository:
+            repo: "deb [arch={{ gs_deb_arch }} signed-by=/etc/apt/keyrings/microsoft.asc] https://packages.microsoft.com/repos/azure-cli/ {{ ansible_distribution_release }} main"
+            filename: azure-cli
+            state: present
+            update_cache: true
+          when: gs_install_azure_cli | bool
+
+        - name: Install Azure CLI
+          ansible.builtin.apt:
+            name: azure-cli
+            state: present
+          when: gs_install_azure_cli | bool
+
+        - name: Add HashiCorp apt signing key
+          ansible.builtin.get_url:
+            url: https://apt.releases.hashicorp.com/gpg
+            dest: /etc/apt/keyrings/hashicorp.asc
+            mode: "0644"
+          when: gs_install_terraform | bool
+
+        - name: Add HashiCorp apt repository
+          ansible.builtin.apt_repository:
+            repo: "deb [arch={{ gs_deb_arch }} signed-by=/etc/apt/keyrings/hashicorp.asc] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
+            filename: hashicorp
+            state: present
+            update_cache: true
+          when: gs_install_terraform | bool
+
+        - name: Install Terraform
+          ansible.builtin.apt:
+            name: terraform
+            state: present
+          when: gs_install_terraform | bool
+
+    - name: Bootstrap Red Hat family bastion packages
+      when:
+        - gs_bootstrap_bastion | bool
+        - ansible_os_family == 'RedHat'
+      become: "{{ gs_bootstrap_become | bool }}"
+      block:
+        - name: Install common Red Hat packages
+          ansible.builtin.package:
+            name: "{{ gs_bastion_packages_redhat }}"
+            state: present
+
+        - name: Add Microsoft rpm signing key
+          ansible.builtin.rpm_key:
+            key: https://packages.microsoft.com/keys/microsoft.asc
+            state: present
+          when: gs_install_azure_cli | bool
+
+        - name: Add Azure CLI yum repository
+          ansible.builtin.yum_repository:
+            name: azure-cli
+            description: Azure CLI
+            baseurl: https://packages.microsoft.com/yumrepos/azure-cli
+            enabled: true
+            gpgcheck: true
+            gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+          when: gs_install_azure_cli | bool
+
+        - name: Install Azure CLI
+          ansible.builtin.package:
+            name: azure-cli
+            state: present
+          when: gs_install_azure_cli | bool
+
+        - name: Add HashiCorp rpm signing key
+          ansible.builtin.rpm_key:
+            key: https://rpm.releases.hashicorp.com/gpg
+            state: present
+          when: gs_install_terraform | bool
+
+        - name: Add HashiCorp yum repository
+          ansible.builtin.yum_repository:
+            name: hashicorp
+            description: HashiCorp Stable
+            baseurl: "https://rpm.releases.hashicorp.com/RHEL/$releasever/$basearch/stable"
+            enabled: true
+            gpgcheck: true
+            gpgkey: https://rpm.releases.hashicorp.com/gpg
+          when: gs_install_terraform | bool
+
+        - name: Install Terraform
+          ansible.builtin.package:
+            name: terraform
+            state: present
+          when: gs_install_terraform | bool
+
+    - name: Check required bastion commands
+      ansible.builtin.command:
+        argv:
+          - sh
+          - -lc
+          - "command -v {{ item | quote }}"
+      changed_when: false
+      loop: "{{ ['az', 'jq', 'git', 'curl'] + (['rsync'] if gs_source_strategy == 'copy' else []) + (['terraform'] if gs_deployment_mode == 'terraform' else []) }}"
+
+    - name: Check local rsync for copy source strategy
+      ansible.builtin.command:
+        argv:
+          - sh
+          - -lc
+          - command -v rsync
+      changed_when: false
+      delegate_to: localhost
+      become: false
+      when: gs_source_strategy == 'copy'
+
+    - name: Enable Azure CLI dynamic extension installation
+      ansible.builtin.command:
+        argv:
+          - az
+          - config
+          - set
+          - extension.use_dynamic_install=yes_without_prompt
+      changed_when: false
+      environment: "{{ gs_command_environment }}"
+      when:
+        - gs_install_azure_cli | bool
+        - gs_install_azure_containerapp_extension | bool
+
+    - name: Ensure Azure Container Apps CLI extension is available
+      ansible.builtin.command:
+        argv:
+          - az
+          - extension
+          - add
+          - --name
+          - containerapp
+          - --upgrade
+      changed_when: false
+      environment: "{{ gs_command_environment }}"
+      when:
+        - gs_install_azure_cli | bool
+        - gs_install_azure_containerapp_extension | bool
+
+    - name: Prepare target application parent directory
+      ansible.builtin.file:
+        path: "{{ gs_app_repo_path | dirname }}"
+        state: directory
+        mode: "0755"
+      when: gs_source_strategy in ['git', 'copy']
+
+    - name: Prepare target application directory for rsync
+      ansible.builtin.file:
+        path: "{{ gs_app_repo_path }}"
+        state: directory
+        mode: "0755"
+      when: gs_source_strategy == 'copy'
+
+    - name: Clone or update target application repository on bastion
+      ansible.builtin.git:
+        repo: "{{ gs_app_repo_url }}"
+        dest: "{{ gs_app_repo_path }}"
+        version: "{{ gs_app_repo_version }}"
+        update: true
+        force: "{{ gs_app_repo_force | bool }}"
+        accept_hostkey: true
+      when: gs_source_strategy == 'git'
+
+    - name: Check local source path for copy strategy
+      ansible.builtin.stat:
+        path: "{{ gs_local_app_repo_path }}"
+      register: gs_local_app_repo_stat
+      delegate_to: localhost
+      become: false
+      when: gs_source_strategy == 'copy'
+
+    - name: Require local source path for copy strategy
+      ansible.builtin.assert:
+        that:
+          - gs_local_app_repo_stat.stat.isdir | default(false)
+        fail_msg: "gs_source_strategy=copy requires a readable local directory at {{ gs_local_app_repo_path }}."
+      when: gs_source_strategy == 'copy'
+
+    - name: Build rsync connection details for copy strategy
+      ansible.builtin.set_fact:
+        gs_rsync_ssh_key_path: "{{ ansible_ssh_private_key_file | default('') | regex_replace('^~', lookup('env', 'HOME')) }}"
+        gs_rsync_ssh_command: >-
+          ssh
+          -o StrictHostKeyChecking=no
+          -o UserKnownHostsFile=/dev/null
+          -o ServerAliveInterval=15
+          -o ServerAliveCountMax=12
+          -o TCPKeepAlive=yes
+          -o ConnectTimeout={{ gs_rsync_connect_timeout_seconds }}
+          -o IPQoS=throughput
+          {{ '-p ' ~ ansible_port if (ansible_port is defined) else '' }}
+          {{ '-i ' ~ (ansible_ssh_private_key_file | regex_replace('^~', lookup('env', 'HOME'))) if (ansible_ssh_private_key_file is defined) else '' }}
+        gs_rsync_remote_target: "{{ ((ansible_user | default('')) ~ '@' if ((ansible_user | default('')) | length > 0) else '') ~ (ansible_host | default(inventory_hostname)) ~ ':' ~ gs_app_repo_path ~ '/' }}"
+      when: gs_source_strategy == 'copy'
+
+    - name: Sync target application repository to bastion
+      ansible.builtin.command:
+        argv: >-
+          {{
+            ['rsync', '-az', '--partial', '--delay-updates', '--timeout=' ~ gs_rsync_timeout_seconds, '--stats']
+            + (['--delete'] if (gs_rsync_delete_remote | bool) else [])
+            + (['--itemize-changes'] if (gs_rsync_verbose_changes | bool) else [])
+            + (['--bwlimit=' ~ gs_rsync_bwlimit_kbps] if ((gs_rsync_bwlimit_kbps | int) > 0) else [])
+            + (gs_rsync_exclude_patterns | map('regex_replace', '^', '--exclude=') | list)
+            + ['-e', gs_rsync_ssh_command, (gs_local_app_repo_path | regex_replace('/+$', '')) ~ '/', gs_rsync_remote_target]
+          }}
+      delegate_to: localhost
+      become: false
+      register: gs_rsync_source
+      changed_when: "'Number of regular files transferred: 0' not in gs_rsync_source.stdout"
+      when: gs_source_strategy == 'copy'
+
+    - name: Write Terraform variables from inline content
+      ansible.builtin.copy:
+        content: "{{ gs_terraform_tfvars_content }}"
+        dest: "{{ gs_terraform_working_dir }}/terraform.tfvars"
+        mode: "0600"
+      when:
+        - gs_deployment_mode == 'terraform'
+        - gs_terraform_tfvars_content | length > 0
+
+    - name: Copy Terraform variables file to bastion
+      ansible.builtin.copy:
+        src: "{{ gs_terraform_tfvars_local_src }}"
+        dest: "{{ gs_terraform_working_dir }}/terraform.tfvars"
+        mode: "0600"
+      when:
+        - gs_deployment_mode == 'terraform'
+        - gs_terraform_tfvars_local_src | length > 0
+
+    - name: Check target application repository
+      ansible.builtin.stat:
+        path: "{{ gs_app_repo_path }}"
+      register: gs_app_repo_stat
+
+    - name: Require target application repository
+      ansible.builtin.assert:
+        that:
+          - gs_app_repo_stat.stat.isdir | default(false)
+        fail_msg: "Target app repo was not found at {{ gs_app_repo_path }}."
+
+    - name: Check app-only deployment script
+      ansible.builtin.stat:
+        path: "{{ gs_app_repo_path }}/infra/scripts/deploy_containerapp_image.sh"
+      register: gs_app_deploy_script_stat
+      when: gs_deployment_mode == 'app_only'
+
+    - name: Require app-only deployment script
+      ansible.builtin.assert:
+        that:
+          - gs_app_deploy_script_stat.stat.exists | default(false)
+        fail_msg: "Expected script at {{ gs_app_repo_path }}/infra/scripts/deploy_containerapp_image.sh."
+      when: gs_deployment_mode == 'app_only'
+
+    - name: Ensure app-only deployment script is executable
+      ansible.builtin.file:
+        path: "{{ gs_app_repo_path }}/infra/scripts/deploy_containerapp_image.sh"
+        mode: "0755"
+      when: gs_deployment_mode == 'app_only'
+
+    - name: Check Terraform variables file
+      ansible.builtin.stat:
+        path: "{{ gs_terraform_working_dir }}/terraform.tfvars"
+      register: gs_terraform_tfvars_stat
+      when: gs_deployment_mode == 'terraform'
+
+    - name: Require Terraform variables file when requested
+      ansible.builtin.assert:
+        that:
+          - (not (gs_require_terraform_tfvars | bool)) or gs_terraform_tfvars_stat.stat.exists
+        fail_msg: "Terraform mode expects {{ gs_terraform_working_dir }}/terraform.tfvars. Set gs_require_terraform_tfvars=false to use only defaults."
+      when: gs_deployment_mode == 'terraform'
+
+    - name: Login to Azure with managed identity
+      ansible.builtin.command:
+        argv:
+          - az
+          - login
+          - --identity
+          - --output
+          - json
+      changed_when: false
+      failed_when: false
+      environment: "{{ gs_command_environment }}"
+      register: gs_managed_identity_login
+      when: gs_azure_login_mode == 'managed_identity'
+
+    - name: Require managed identity Azure access
+      ansible.builtin.fail:
+        msg: >-
+          Managed identity login on {{ inventory_hostname }} did not return a usable Azure subscription.
+          Grant the bastion system-assigned managed identity Contributor, or an appropriately scoped custom role,
+          on resource group {{ gs_azure_resource_group }}. Principal ID:
+          {{ gs_bastion_managed_identity_principal_id | default('not configured', true) }}.
+          If you prefer not to use managed identity, set gs_azure_login_mode=service_principal and provide
+          AZURE_TENANT_ID, AZURE_CLIENT_ID, and AZURE_CLIENT_SECRET. Azure CLI output:
+          {{ ((gs_managed_identity_login.stderr | default('', true)) ~ ' ' ~ (gs_managed_identity_login.stdout | default('', true))) | trim }}
+      when:
+        - gs_azure_login_mode == 'managed_identity'
+        - gs_managed_identity_login.rc != 0
+
+    - name: Login to Azure with service principal
+      ansible.builtin.command:
+        argv:
+          - az
+          - login
+          - --service-principal
+          - --username
+          - "{{ gs_azure_client_id }}"
+          - --password
+          - "{{ gs_azure_client_secret }}"
+          - --tenant
+          - "{{ gs_azure_tenant_id }}"
+      changed_when: false
+      no_log: true
+      environment: "{{ gs_command_environment }}"
+      when: gs_azure_login_mode == 'service_principal'
+
+    - name: Confirm Azure CLI session on bastion
+      ansible.builtin.command:
+        argv:
+          - az
+          - account
+          - show
+          - --output
+          - json
+      changed_when: false
+      environment: "{{ gs_command_environment }}"
+      register: gs_azure_account
+
+    - name: Select Azure subscription
+      ansible.builtin.command:
+        argv:
+          - az
+          - account
+          - set
+          - --subscription
+          - "{{ gs_azure_subscription_id }}"
+      changed_when: false
+      environment: "{{ gs_command_environment }}"
+      when: gs_azure_subscription_id | length > 0
+
+    - name: Resolve image tag from the target repository
+      ansible.builtin.command:
+        argv:
+          - git
+          - rev-parse
+          - --short
+          - HEAD
+      args:
+        chdir: "{{ gs_app_repo_path }}"
+      changed_when: false
+      register: gs_repo_short_sha
+
+    - name: Set effective image tag
+      ansible.builtin.set_fact:
+        gs_effective_image_tag: "{{ gs_image_tag if (gs_image_tag | length > 0) else gs_repo_short_sha.stdout }}"
+
+    - name: Deploy app-only image to Azure Container Apps
+      when: gs_deployment_mode == 'app_only'
+      block:
+        - name: Build deployment command
+          ansible.builtin.set_fact:
+            gs_deploy_containerapp_argv: >-
+              {{
+                [gs_app_repo_path ~ '/infra/scripts/deploy_containerapp_image.sh',
+                 '--resource-group', gs_azure_resource_group,
+                 '--application', gs_azure_application_tag,
+                 '--environment', gs_azure_environment_tag,
+                 '--image-name', gs_image_name,
+                 '--image-tag', gs_effective_image_tag]
+                + (['--container-app', gs_container_app_name] if (gs_container_app_name | length > 0) else [])
+                + (['--acr', gs_acr_name] if (gs_acr_name | length > 0) else [])
+                + (['--postgres-server', gs_postgres_server_name] if (gs_postgres_server_name | length > 0) else [])
+                + (['--postgres-database', gs_postgres_database] if (gs_postgres_database | length > 0) else [])
+                + (['--postgres-user', gs_postgres_user] if (gs_postgres_user | length > 0) else [])
+                + (['--skip-build'] if (gs_skip_build | bool) else [])
+                + (['--skip-latest'] if not (gs_tag_latest | bool) else [])
+                + (['--skip-db-setup'] if not (gs_apply_db_schema | bool) else [])
+                + (['--skip-seed'] if not (gs_seed_db | bool) else [])
+                + (['--skip-smoke'] if not (gs_script_smoke_test | bool) else [])
+              }}
+
+        - name: Run app-only Azure deployment from bastion
+          ansible.builtin.command:
+            argv: "{{ gs_deploy_containerapp_argv }}"
+          args:
+            chdir: "{{ gs_app_repo_path }}"
+          register: gs_app_only_deployment
+          changed_when: true
+          environment: "{{ gs_command_environment }}"
+
+        - name: Capture app-only deployment facts
+          ansible.builtin.set_fact:
+            gs_deployed_app_url: "{{ (gs_app_only_deployment.stdout | regex_findall('URL:\\s+(https://\\S+)') | first | default('')) }}"
+            gs_deployed_image_ref: "{{ (gs_app_only_deployment.stdout | regex_findall('Image:\\s+(\\S+)') | first | default('')) }}"
+            gs_deployed_resource_group: "{{ (gs_app_only_deployment.stdout | regex_findall('RG:\\s+(\\S+)') | first | default(gs_azure_resource_group)) }}"
+            gs_deployed_container_app_name: "{{ (gs_app_only_deployment.stdout | regex_findall('App:\\s+(\\S+)') | first | default(gs_container_app_name)) }}"
+
+    - name: Provision and deploy with Terraform
+      when: gs_deployment_mode == 'terraform'
+      block:
+        - name: Initialize Terraform
+          ansible.builtin.command:
+            argv:
+              - terraform
+              - init
+          args:
+            chdir: "{{ gs_terraform_working_dir }}"
+          register: gs_terraform_init
+          changed_when: "'Terraform has been successfully initialized' in gs_terraform_init.stdout"
+          environment: "{{ gs_command_environment }}"
+
+        - name: Bootstrap Terraform ACR resources
+          ansible.builtin.command:
+            argv: >-
+              {{
+                ['terraform', 'apply']
+                + (['-auto-approve'] if (gs_terraform_auto_approve | bool) else [])
+                + ['-target=random_string.suffix', '-target=azurerm_container_registry.app']
+              }}
+          args:
+            chdir: "{{ gs_terraform_working_dir }}"
+          changed_when: true
+          environment: "{{ gs_command_environment }}"
+          when: gs_terraform_apply_bootstrap | bool
+
+        - name: Read Terraform ACR name
+          ansible.builtin.command:
+            argv:
+              - terraform
+              - output
+              - -raw
+              - acr_name
+          args:
+            chdir: "{{ gs_terraform_working_dir }}"
+          changed_when: false
+          environment: "{{ gs_command_environment }}"
+          register: gs_terraform_acr_name
+
+        - name: Read Terraform ACR login server
+          ansible.builtin.command:
+            argv:
+              - terraform
+              - output
+              - -raw
+              - acr_login_server
+          args:
+            chdir: "{{ gs_terraform_working_dir }}"
+          changed_when: false
+          environment: "{{ gs_command_environment }}"
+          register: gs_terraform_acr_login_server
+
+        - name: Build image in Azure Container Registry
+          ansible.builtin.command:
+            argv: >-
+              {{
+                ['az', 'acr', 'build',
+                 '--registry', gs_terraform_acr_name.stdout,
+                 '--file', 'infra/docker/Dockerfile',
+                 '--image', gs_image_name ~ ':' ~ gs_effective_image_tag]
+                + (['--image', gs_image_name ~ ':latest'] if (gs_tag_latest | bool) else [])
+                + [gs_app_repo_path]
+              }}
+          args:
+            chdir: "{{ gs_app_repo_path }}"
+          changed_when: true
+          environment: "{{ gs_command_environment }}"
+
+        - name: Apply Terraform stack with built image
+          ansible.builtin.command:
+            argv: >-
+              {{
+                ['terraform', 'apply']
+                + (['-auto-approve'] if (gs_terraform_auto_approve | bool) else [])
+                + ['-var', 'container_image=' ~ gs_terraform_acr_login_server.stdout ~ '/' ~ gs_image_name ~ ':' ~ gs_effective_image_tag]
+              }}
+          args:
+            chdir: "{{ gs_terraform_working_dir }}"
+          changed_when: true
+          environment: "{{ gs_command_environment }}"
+
+        - name: Read Terraform deployment outputs
+          ansible.builtin.command:
+            argv:
+              - terraform
+              - output
+              - -raw
+              - "{{ item }}"
+          args:
+            chdir: "{{ gs_terraform_working_dir }}"
+          changed_when: false
+          environment: "{{ gs_command_environment }}"
+          loop:
+            - container_app_url
+            - container_app_name
+            - resource_group_name
+            - container_image
+          register: gs_terraform_outputs
+
+        - name: Capture Terraform deployment facts
+          ansible.builtin.set_fact:
+            gs_terraform_output_map: "{{ gs_terraform_output_map | default({}) | combine({item.item: item.stdout}) }}"
+          loop: "{{ gs_terraform_outputs.results }}"
+
+        - name: Set Terraform deployment facts
+          ansible.builtin.set_fact:
+            gs_deployed_app_url: "{{ gs_terraform_output_map.container_app_url }}"
+            gs_deployed_image_ref: "{{ gs_terraform_output_map.container_image }}"
+            gs_deployed_resource_group: "{{ gs_terraform_output_map.resource_group_name }}"
+            gs_deployed_container_app_name: "{{ gs_terraform_output_map.container_app_name }}"
+
+    - name: Require deployed application URL
+      ansible.builtin.assert:
+        that:
+          - gs_deployed_app_url is defined
+          - gs_deployed_app_url is match('^https://')
+        fail_msg: "Deployment completed but no HTTPS application URL could be resolved."
+
+    - name: Verify Azure Container App revision from bastion
+      when:
+        - gs_verify_application | bool
+        - gs_deployed_resource_group | length > 0
+        - gs_deployed_container_app_name | length > 0
+      block:
+        - name: Read Container App details
+          ansible.builtin.command:
+            argv:
+              - az
+              - containerapp
+              - show
+              - --resource-group
+              - "{{ gs_deployed_resource_group }}"
+              - --name
+              - "{{ gs_deployed_container_app_name }}"
+              - --output
+              - json
+          changed_when: false
+          environment: "{{ gs_command_environment }}"
+          register: gs_container_app_show
+
+        - name: Capture latest revision name
+          ansible.builtin.set_fact:
+            gs_latest_revision_name: "{{ (gs_container_app_show.stdout | from_json).properties.latestRevisionName | default('') }}"
+
+        - name: Wait for latest revision to be healthy
+          ansible.builtin.command:
+            argv:
+              - az
+              - containerapp
+              - revision
+              - list
+              - --resource-group
+              - "{{ gs_deployed_resource_group }}"
+              - --name
+              - "{{ gs_deployed_container_app_name }}"
+              - --query
+              - "[?name=='{{ gs_latest_revision_name }}'] | [0].{name:name,health:properties.healthState,running:properties.runningState,provisioning:properties.provisioningState,active:properties.active}"
+              - --output
+              - json
+          changed_when: false
+          environment: "{{ gs_command_environment }}"
+          register: gs_revision_state
+          until:
+            - (((gs_revision_state.stdout | default('{}') | from_json) | default({}, true)).health | default('')) == 'Healthy'
+            - (((gs_revision_state.stdout | default('{}') | from_json) | default({}, true)).running | default('')) in ['Running', 'ScaledToZero', '']
+          retries: "{{ gs_verification_retries }}"
+          delay: "{{ gs_verification_delay_seconds }}"
+
+    - name: Verify deployed application endpoints from bastion
+      ansible.builtin.uri:
+        url: "{{ (gs_deployed_app_url | regex_replace('/+$', '')) ~ item.path }}"
+        method: GET
+        status_code: "{{ item.expected_status }}"
+        return_content: false
+        validate_certs: true
+        timeout: 30
+      register: gs_endpoint_check
+      until: (gs_endpoint_check.status | default(0)) == item.expected_status
+      retries: "{{ gs_verification_retries }}"
+      delay: "{{ gs_verification_delay_seconds }}"
+      loop: "{{ gs_verification_endpoints }}"
+      loop_control:
+        label: "{{ item.name }}"
+      when: gs_verify_application | bool
+
+    - name: Deployment summary
+      ansible.builtin.debug:
+        msg:
+          - "Deployment host: {{ inventory_hostname }}"
+          - "Deployment mode: {{ gs_deployment_mode }}"
+          - "Application URL: {{ gs_deployed_app_url }}"
+          - "Container App: {{ gs_deployed_container_app_name | default('unknown') }}"
+          - "Resource group: {{ gs_deployed_resource_group | default('unknown') }}"
+          - "Image: {{ gs_deployed_image_ref | default(gs_image_name ~ ':' ~ gs_effective_image_tag) }}"

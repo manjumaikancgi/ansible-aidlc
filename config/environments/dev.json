@@ -1,0 +1,21 @@
+{
+  "gs_deployment_mode": "app_only",
+  "gs_azure_resource_group": "RG_300000000078783_Telstra_CDE_and_CMS_PSM",
+  "gs_azure_application_tag": "GS-MFA",
+  "gs_azure_environment_tag": "dev",
+  "gs_container_app_name": "",
+  "gs_acr_name": "",
+  "gs_postgres_server_name": "",
+  "gs_postgres_database": "gsmfa",
+  "gs_postgres_user": "gsmfaadmin",
+  "gs_image_name": "gs-mfa",
+  "gs_image_tag": "",
+  "gs_skip_build": false,
+  "gs_tag_latest": true,
+  "gs_apply_db_schema": true,
+  "gs_seed_db": true,
+  "gs_script_smoke_test": true,
+  "gs_verify_application": true,
+  "gs_verification_retries": 18,
+  "gs_verification_delay_seconds": 10
+}

@@ -1,0 +1,87 @@
+---
+# Example overrides for playbooks/deploy_gs_pov_harness_agent.yml.
+# Pass with:
+#   ansible-playbook playbooks/deploy_gs_pov_harness_agent.yml -e @group_vars/all/gs_pov_harness_agent.yml.example
+
+gs_deployment_hosts: deployment_controller
+
+# Remote path on the deployment controller host. For a Linux bastion this should
+# be a Linux path owned by the SSH user.
+gs_app_repo_path: /home/azureuser/gs-pov-harness-agent
+
+# How the bastion gets the app source:
+# - existing: repo already exists at gs_app_repo_path
+# - git: clone/update gs_app_repo_url on the bastion. The bastion needs GitHub access.
+# - copy: copy gs_local_app_repo_path from the Ansible control machine.
+gs_source_strategy: copy
+gs_local_app_repo_path: /Users/manju.krishnappa/workspace/cgi/cgi_github/gs-pov-harness-agent
+gs_app_repo_url: git@github.com:manjumaikancgi/gs-pov-harness-agent.git
+gs_app_repo_version: feature/agent-harness-no-foundry
+gs_app_repo_force: false
+gs_rsync_timeout_seconds: 900
+gs_rsync_connect_timeout_seconds: 30
+gs_rsync_delete_remote: true
+gs_rsync_verbose_changes: false
+gs_rsync_bwlimit_kbps: 0
+
+# Bootstrap assumes a Debian/Ubuntu or Red Hat family bastion with sudo.
+gs_bootstrap_bastion: true
+gs_bootstrap_become: true
+gs_install_azure_cli: true
+gs_install_azure_containerapp_extension: true
+
+# app_only uses the target repo's infra/scripts/deploy_containerapp_image.sh.
+# terraform provisions the Azure stack first, then builds and deploys the image.
+gs_deployment_mode: app_only
+gs_install_terraform: false
+
+# Azure auth on the bastion:
+# - existing: az login has already been completed on the bastion
+# - managed_identity: run az login --identity
+# - service_principal: use AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET
+gs_azure_login_mode: existing
+
+gs_azure_resource_group: RG_300000000078783_Telstra_CDE_and_CMS_PSM
+gs_azure_application_tag: GS-MFA
+gs_azure_environment_tag: dev
+
+# Optional explicit Azure resource names. Leave blank to let the app deployment
+# script discover resources by application/environment tags.
+gs_container_app_name: ""
+gs_acr_name: ""
+gs_postgres_server_name: ""
+gs_postgres_database: gsmfa
+gs_postgres_user: gsmfaadmin
+
+gs_image_name: gs-mfa
+gs_image_tag: ""
+gs_skip_build: false
+gs_tag_latest: true
+gs_apply_db_schema: true
+gs_seed_db: true
+gs_script_smoke_test: true
+
+gs_verify_application: true
+gs_verification_retries: 18
+gs_verification_delay_seconds: 10
+gs_verification_endpoints:
+  - name: frontend
+    path: /
+    expected_status: 200
+  - name: app health
+    path: /api/health
+    expected_status: 200
+  - name: database health
+    path: /api/health/db
+    expected_status: 200
+  - name: seeded clients
+    path: /api/clients?limit=1
+    expected_status: 200
+
+# Terraform mode expects infra/terraform/terraform.tfvars in the app repo unless
+# gs_require_terraform_tfvars is set to false.
+gs_require_terraform_tfvars: true
+gs_terraform_apply_bootstrap: true
+gs_terraform_auto_approve: true
+gs_terraform_tfvars_local_src: ""
+gs_terraform_tfvars_content: ""

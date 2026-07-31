@@ -1,0 +1,15 @@
+---
+gs_source_strategy: copy
+gs_local_app_repo_path: /Users/manju.krishnappa/workspace/cgi/cgi_github/gs-pov-harness-agent
+gs_app_repo_path: /home/azureuser/gs-pov-harness-agent
+gs_app_repo_url: git@github.com:manjumaikancgi/gs-pov-harness-agent.git
+gs_app_repo_version: feature/agent-harness-no-foundry
+gs_rsync_timeout_seconds: 900
+gs_rsync_connect_timeout_seconds: 30
+gs_rsync_delete_remote: true
+gs_rsync_verbose_changes: false
+gs_rsync_bwlimit_kbps: 0
+gs_bootstrap_bastion: true
+gs_bootstrap_become: true
+gs_azure_login_mode: managed_identity
+gs_bastion_managed_identity_principal_id: bb9d9a3c-0d63-46d5-b40a-a10327c797c5

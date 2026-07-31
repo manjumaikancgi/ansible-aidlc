@@ -1,0 +1,27 @@
+resource_group_name = "RG_300000000078783_Telstra_CDE_and_CMS_PSM"
+location            = "australiaeast"
+
+admin_username              = "azureuser"
+ssh_public_key              = "ssh-rsa REPLACE_WITH_YOUR_PUBLIC_KEY"
+ansible_ssh_private_key_file = "~/.ssh/id_rsa"
+local_app_repo_path          = "/Users/manju.krishnappa/workspace/cgi/cgi_github/gs-pov-harness-agent"
+
+# Restrict this to your workstation/VPN public IP before applying.
+allowed_ssh_cidrs = ["0.0.0.0/0"]
+
+# Prefer an SSH tunnel for the console:
+#   ssh -L 8765:127.0.0.1:8765 azureuser@<bastion-public-ip>
+enable_console_ingress = false
+allowed_console_cidrs  = []
+
+create_virtual_network          = true
+virtual_network_name            = "vnet-gs-mfa-dev-bastion"
+virtual_network_address_space   = ["10.42.0.0/24"]
+subnet_name                     = "snet-bastion"
+subnet_address_prefixes         = ["10.42.0.0/27"]
+
+install_ansible = true
+
+# Set true only if your Terraform caller can create role assignments. Otherwise
+# use the principal ID output and assign RBAC separately.
+assign_resource_group_contributor = false

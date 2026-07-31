@@ -1,0 +1,10 @@
+.runs/
+.ansible/
+__pycache__/
+*.pyc
+.DS_Store
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+terraform.tfvars.json

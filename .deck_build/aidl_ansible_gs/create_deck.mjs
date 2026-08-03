@@ -402,6 +402,75 @@ async function main() {
   {
     const slide = presentation.slides.add();
     slide.background.fill = C.canvas;
+    addText(slide, "The deployment console makes Ansible delivery visible", 41, 42, 1110, 76, {
+      fontSize: 40,
+      bold: true,
+    });
+    addText(
+      slide,
+      "Teams can choose the bastion and environment, trigger the playbook, and watch stages and logs in one place.",
+      41,
+      122,
+      920,
+      46,
+      { fontSize: 23, color: C.muted },
+    );
+
+    const screenshotBytes = await fs.readFile(path.join(ROOT, ".deck_build", "aidl_ansible_gs", "deployment_console_ui.png"));
+    addPanel(slide, 50, 192, 760, 528, C.panel2, C.rule);
+    slide.images.add({
+      blob: screenshotBytes,
+      contentType: "image/png",
+      alt: "Good Shepherd deployment console showing bastion selection, environment selection, stages, and live log panels.",
+      fit: "contain",
+      position: { left: 58, top: 200, width: 744, height: 512 },
+    });
+
+    addPanel(slide, 850, 192, 338, 376, C.accentSoft, C.rule);
+    addText(slide, "What the UI adds", 878, 222, 280, 34, {
+      fontSize: 28,
+      bold: true,
+    });
+    addBulletList(
+      slide,
+      [
+        "Bastion dropdown for local, dev, or staging control points.",
+        "Environment files become selectable release inputs.",
+        "Stage status and live logs expose deployment progress.",
+      ],
+      880,
+      286,
+      274,
+      82,
+    );
+    addText(
+      slide,
+      "This turns a command-line playbook into a delivery cockpit without changing the underlying Ansible contract.",
+      850,
+      600,
+      338,
+      72,
+      { fontSize: 20, bold: true },
+    );
+    addFooter(slide, 5);
+    addNotes(
+      slide,
+      [
+        "Use the screenshot to make the delivery model tangible.",
+        "The UI does not replace Ansible; it wraps the same playbook in a safer operator experience.",
+      ],
+      [
+        "Screenshot captured locally from deployment_console/server.py at http://127.0.0.1:8766/.",
+        "deployment_console/static/index.html and deployment_console/static/app.js.",
+        "deployment_console/server.py API routes for bastions, environments, deployments, logs, and events.",
+      ],
+    );
+  }
+
+  // Slide 6
+  {
+    const slide = presentation.slides.add();
+    slide.background.fill = C.canvas;
     addText(slide, "In CI, Ansible becomes the promotion contract", 41, 42, 1110, 76, {
       fontSize: 40,
       bold: true,
@@ -441,7 +510,7 @@ async function main() {
       510,
       C.panel2,
     );
-    addFooter(slide, 5);
+    addFooter(slide, 6);
     addNotes(
       slide,
       [
@@ -456,7 +525,7 @@ async function main() {
     );
   }
 
-  // Slide 6
+  // Slide 7
   {
     const slide = presentation.slides.add();
     slide.background.fill = C.canvas;
@@ -519,7 +588,7 @@ async function main() {
       58,
       { fontSize: 24, bold: true },
     );
-    addFooter(slide, 6);
+    addFooter(slide, 7);
     addNotes(
       slide,
       [

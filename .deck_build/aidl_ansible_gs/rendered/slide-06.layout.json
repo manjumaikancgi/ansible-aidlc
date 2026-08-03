@@ -2,13 +2,13 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/13izyy",
-    "id": "13izyy",
+    "aid": "sl/tzl0uv",
+    "id": "tzl0uv",
     "slide": 6,
-    "layoutId": "7d4445af-de24-4920-b9f3-92cf3344a38d",
+    "layoutId": "0aad7930-ad45-4dda-9294-6f4bc03dab2c",
     "layoutName": "Title Slide",
     "layoutType": "title",
-    "masterLayoutId": "2aa743d0-66bb-45df-a83d-ddb11e78ac3b",
+    "masterLayoutId": "4e61968b-fdc1-46e0-9f65-024eda1ab54d",
     "masterLayoutName": "Master",
     "backgroundColor": "#FFFFFF",
     "frame": {
@@ -45,15 +45,15 @@
   "inheritedLayers": [
     {
       "scope": "layout",
-      "id": "7d4445af-de24-4920-b9f3-92cf3344a38d",
+      "id": "0aad7930-ad45-4dda-9294-6f4bc03dab2c",
       "name": "Title Slide",
       "type": "title",
-      "parentLayoutId": "2aa743d0-66bb-45df-a83d-ddb11e78ac3b",
+      "parentLayoutId": "4e61968b-fdc1-46e0-9f65-024eda1ab54d",
       "elements": []
     },
     {
       "scope": "master",
-      "id": "2aa743d0-66bb-45df-a83d-ddb11e78ac3b",
+      "id": "4e61968b-fdc1-46e0-9f65-024eda1ab54d",
       "name": "Master",
       "type": "master",
       "elements": []
@@ -64,7 +64,7 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/lgzulofm",
+      "aid": "sh/1wfud8fu",
       "id": "1",
       "bbox": [
         41,
@@ -73,8 +73,8 @@
         76
       ],
       "geometry": "rect",
-      "text": "Use the pattern as a delivery operating model",
-      "textPreview": "Use the pattern as a delivery operating model",
+      "text": "In CI, Ansible becomes the promotion contract",
+      "textPreview": "In CI, Ansible becomes the promotion contract",
       "resolvedFontSize": 40,
       "resolvedTextStyle": {
         "fontSize": 40,
@@ -94,14 +94,14 @@
         "lines": [
           {
             "index": 1,
-            "text": "Use the pattern as a delivery operating model"
+            "text": "In CI, Ansible becomes the promotion contract"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Use the pattern as a delivery operating model",
+          "text": "In CI, Ansible becomes the promotion contract",
           "resolvedTextStyle": {
             "fontSize": 40,
             "typeface": "Helvetica Neue",
@@ -111,7 +111,7 @@
           "runs": [
             {
               "index": 1,
-              "text": "Use the pattern as a delivery operating model",
+              "text": "In CI, Ansible becomes the promotion contract",
               "fontSize": 40,
               "typeface": "Helvetica Neue",
               "color": "#000000",
@@ -127,659 +127,77 @@
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/yd8bq9gv",
+      "aid": "sh/et4v2twj",
       "id": "2",
       "bbox": [
-        70,
-        165,
-        360,
-        355
+        41,
+        122,
+        980,
+        46
       ],
       "geometry": "rect",
-      "fillColor": "#F6F7F9",
-      "lineColor": "#B8BCC4",
-      "lineWidth": 1
+      "text": "AIDL improves the work entering the pipeline; Ansible standardizes what the pipeline actually does.",
+      "textPreview": "AIDL improves the work entering the pipeline; Ansible standardizes what the pipeline actually does.",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "AIDL improves the work entering the pipeline; Ansible standardizes what the pipeline actually"
+          },
+          {
+            "index": 2,
+            "text": "does."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "AIDL improves the work entering the pipeline; Ansible standardizes what the pipeline actually does.",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "AIDL improves the work entering the pipeline; Ansible standardizes what the pipeline actually does.",
+              "fontSize": 23,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
     },
     {
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/jehcjehg",
+      "aid": "sh/zuxcbyxo",
       "id": "3",
       "bbox": [
-        98,
+        54,
         198,
-        300,
-        34
-      ],
-      "geometry": "rect",
-      "text": "Standardize",
-      "textPreview": "Standardize",
-      "resolvedFontSize": 29,
-      "resolvedTextStyle": {
-        "fontSize": 29,
-        "typeface": "Helvetica Neue",
-        "color": "#000000",
-        "bold": true,
-        "alignment": "left",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "Standardize"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "Standardize",
-          "resolvedTextStyle": {
-            "fontSize": 29,
-            "typeface": "Helvetica Neue",
-            "color": "#000000",
-            "bold": true
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "Standardize",
-              "fontSize": 29,
-              "typeface": "Helvetica Neue",
-              "color": "#000000",
-              "bold": true
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 4,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/83atw3yx",
-      "id": "4",
-      "bbox": [
-        100,
-        267,
-        10,
-        10
-      ],
-      "geometry": "ellipse",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 5,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/t4jupofi",
-      "id": "5",
-      "bbox": [
-        126,
-        260,
-        262,
-        60
-      ],
-      "geometry": "rect",
-      "text": "Keep one playbook path across environments.",
-      "textPreview": "Keep one playbook path across environments.",
-      "resolvedFontSize": 21,
-      "resolvedTextStyle": {
-        "fontSize": 21,
-        "typeface": "Helvetica Neue",
-        "color": "#000000",
-        "alignment": "left",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 2,
-        "lines": [
-          {
-            "index": 1,
-            "text": "Keep one playbook path"
-          },
-          {
-            "index": 2,
-            "text": "across environments."
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "Keep one playbook path across environments.",
-          "resolvedTextStyle": {
-            "fontSize": 21,
-            "typeface": "Helvetica Neue",
-            "color": "#000000"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "Keep one playbook path across environments.",
-              "fontSize": 21,
-              "typeface": "Helvetica Neue",
-              "color": "#000000"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 6,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/6hsbutg7",
-      "id": "6",
-      "bbox": [
-        100,
-        337,
-        10,
-        10
-      ],
-      "geometry": "ellipse",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 7,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/7i1cnyxs",
-      "id": "7",
-      "bbox": [
-        126,
-        330,
-        262,
-        60
-      ],
-      "geometry": "rect",
-      "text": "Treat env files and inventory as release inputs.",
-      "textPreview": "Treat env files and inventory as release inputs.",
-      "resolvedFontSize": 21,
-      "resolvedTextStyle": {
-        "fontSize": 21,
-        "typeface": "Helvetica Neue",
-        "color": "#000000",
-        "alignment": "left",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 3,
-        "lines": [
-          {
-            "index": 1,
-            "text": "Treat env files and"
-          },
-          {
-            "index": 2,
-            "text": "inventory as release"
-          },
-          {
-            "index": 3,
-            "text": "inputs."
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "Treat env files and inventory as release inputs.",
-          "resolvedTextStyle": {
-            "fontSize": 21,
-            "typeface": "Helvetica Neue",
-            "color": "#000000"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "Treat env files and inventory as release inputs.",
-              "fontSize": 21,
-              "typeface": "Helvetica Neue",
-              "color": "#000000"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 8,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/g7at03y9",
-      "id": "8",
-      "bbox": [
-        100,
-        407,
-        10,
-        10
-      ],
-      "geometry": "ellipse",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 9,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/h83ut8fu",
-      "id": "9",
-      "bbox": [
-        126,
-        400,
-        262,
-        60
-      ],
-      "geometry": "rect",
-      "text": "Make bastion source strategy explicit.",
-      "textPreview": "Make bastion source strategy explicit.",
-      "resolvedFontSize": 21,
-      "resolvedTextStyle": {
-        "fontSize": 21,
-        "typeface": "Helvetica Neue",
-        "color": "#000000",
-        "alignment": "left",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 2,
-        "lines": [
-          {
-            "index": 1,
-            "text": "Make bastion source"
-          },
-          {
-            "index": 2,
-            "text": "strategy explicit."
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "Make bastion source strategy explicit.",
-          "resolvedTextStyle": {
-            "fontSize": 21,
-            "typeface": "Helvetica Neue",
-            "color": "#000000"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "Make bastion source strategy explicit.",
-              "fontSize": 21,
-              "typeface": "Helvetica Neue",
-              "color": "#000000"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 10,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/p87mpw32",
-      "id": "10",
-      "bbox": [
-        460,
-        165,
-        360,
-        355
-      ],
-      "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#B8BCC4",
-      "lineWidth": 1
-    },
-    {
-      "order": 11,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/o7ylgr2h",
-      "id": "11",
-      "bbox": [
-        488,
-        198,
-        300,
-        34
-      ],
-      "geometry": "rect",
-      "text": "Govern",
-      "textPreview": "Govern",
-      "resolvedFontSize": 29,
-      "resolvedTextStyle": {
-        "fontSize": 29,
-        "typeface": "Helvetica Neue",
-        "color": "#000000",
-        "bold": true,
-        "alignment": "left",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "Govern"
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "Govern",
-          "resolvedTextStyle": {
-            "fontSize": 29,
-            "typeface": "Helvetica Neue",
-            "color": "#000000",
-            "bold": true
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "Govern",
-              "fontSize": 29,
-              "typeface": "Helvetica Neue",
-              "color": "#000000",
-              "bold": true
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 12,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/n6p4n6lw",
-      "id": "12",
-      "bbox": [
-        490,
-        267,
-        10,
-        10
-      ],
-      "geometry": "ellipse",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 13,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/25g3e1kb",
-      "id": "13",
-      "bbox": [
-        516,
-        260,
-        262,
-        60
-      ],
-      "geometry": "rect",
-      "text": "Approve RBAC, secrets, and risky infra.",
-      "textPreview": "Approve RBAC, secrets, and risky infra.",
-      "resolvedFontSize": 21,
-      "resolvedTextStyle": {
-        "fontSize": 21,
-        "typeface": "Helvetica Neue",
-        "color": "#000000",
-        "alignment": "left",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 2,
-        "lines": [
-          {
-            "index": 1,
-            "text": "Approve RBAC, secrets,"
-          },
-          {
-            "index": 2,
-            "text": "and risky infra."
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "Approve RBAC, secrets, and risky infra.",
-          "resolvedTextStyle": {
-            "fontSize": 21,
-            "typeface": "Helvetica Neue",
-            "color": "#000000"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "Approve RBAC, secrets, and risky infra.",
-              "fontSize": 21,
-              "typeface": "Helvetica Neue",
-              "color": "#000000"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 14,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/xcrmdg3y",
-      "id": "14",
-      "bbox": [
-        490,
-        337,
-        10,
-        10
-      ],
-      "geometry": "ellipse",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 15,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/cbi5kb2d",
-      "id": "15",
-      "bbox": [
-        516,
-        330,
-        262,
-        60
-      ],
-      "geometry": "rect",
-      "text": "Let CI run validation before promotion.",
-      "textPreview": "Let CI run validation before promotion.",
-      "resolvedFontSize": 21,
-      "resolvedTextStyle": {
-        "fontSize": 21,
-        "typeface": "Helvetica Neue",
-        "color": "#000000",
-        "alignment": "left",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 2,
-        "lines": [
-          {
-            "index": 1,
-            "text": "Let CI run validation"
-          },
-          {
-            "index": 2,
-            "text": "before promotion."
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "Let CI run validation before promotion.",
-          "resolvedTextStyle": {
-            "fontSize": 21,
-            "typeface": "Helvetica Neue",
-            "color": "#000000"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "Let CI run validation before promotion.",
-              "fontSize": 21,
-              "typeface": "Helvetica Neue",
-              "color": "#000000"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 16,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/bap4b6l8",
-      "id": "16",
-      "bbox": [
-        490,
-        407,
-        10,
-        10
-      ],
-      "geometry": "ellipse",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 17,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/a9gni1kn",
-      "id": "17",
-      "bbox": [
-        516,
-        400,
-        262,
-        60
-      ],
-      "geometry": "rect",
-      "text": "Keep identity paths clear.",
-      "textPreview": "Keep identity paths clear.",
-      "resolvedFontSize": 21,
-      "resolvedTextStyle": {
-        "fontSize": 21,
-        "typeface": "Helvetica Neue",
-        "color": "#000000",
-        "alignment": "left",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 1,
-        "lines": [
-          {
-            "index": 1,
-            "text": "Keep identity paths clear."
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "Keep identity paths clear.",
-          "resolvedTextStyle": {
-            "fontSize": 21,
-            "typeface": "Helvetica Neue",
-            "color": "#000000"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "Keep identity paths clear.",
-              "fontSize": 21,
-              "typeface": "Helvetica Neue",
-              "color": "#000000"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 18,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/dgnmhc3u",
-      "id": "18",
-      "bbox": [
-        850,
-        165,
-        360,
-        355
+        190,
+        78
       ],
       "geometry": "rect",
       "fillColor": "#EAF5FB",
@@ -787,23 +205,23 @@
       "lineWidth": 1
     },
     {
-      "order": 19,
+      "order": 4,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/sfel8729",
-      "id": "19",
+      "aid": "sh/oj6d8nel",
+      "id": "4",
       "bbox": [
-        878,
-        198,
-        300,
-        34
+        68,
+        212,
+        162,
+        48
       ],
       "geometry": "rect",
-      "text": "Learn",
-      "textPreview": "Learn",
-      "resolvedFontSize": 29,
+      "text": "CI moment",
+      "textPreview": "CI moment",
+      "resolvedFontSize": 18,
       "resolvedTextStyle": {
-        "fontSize": 29,
+        "fontSize": 18,
         "typeface": "Helvetica Neue",
         "color": "#000000",
         "bold": true,
@@ -820,16 +238,16 @@
         "lines": [
           {
             "index": 1,
-            "text": "Learn"
+            "text": "CI moment"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Learn",
+          "text": "CI moment",
           "resolvedTextStyle": {
-            "fontSize": 29,
+            "fontSize": 18,
             "typeface": "Helvetica Neue",
             "color": "#000000",
             "bold": true
@@ -837,8 +255,8 @@
           "runs": [
             {
               "index": 1,
-              "text": "Learn",
-              "fontSize": 29,
+              "text": "CI moment",
+              "fontSize": 18,
               "typeface": "Helvetica Neue",
               "color": "#000000",
               "bold": true
@@ -850,42 +268,42 @@
       "lineWidth": 0
     },
     {
-      "order": 20,
+      "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/4ji5ora5",
-      "id": "20",
+      "aid": "sh/9kfuh8v6",
+      "id": "5",
       "bbox": [
-        880,
-        267,
-        10,
-        10
-      ],
-      "geometry": "ellipse",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 21,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/5krmxcbq",
-      "id": "21",
-      "bbox": [
-        906,
-        260,
-        262,
-        60
+        244,
+        198,
+        340,
+        78
       ],
       "geometry": "rect",
-      "text": "Feed deployment logs back into AIDL prompts.",
-      "textPreview": "Feed deployment logs back into AIDL prompts.",
-      "resolvedFontSize": 21,
+      "fillColor": "#EAF5FB",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mxov6dwf",
+      "id": "6",
+      "bbox": [
+        258,
+        212,
+        312,
+        48
+      ],
+      "geometry": "rect",
+      "text": "AIDL contribution",
+      "textPreview": "AIDL contribution",
+      "resolvedFontSize": 16,
       "resolvedTextStyle": {
-        "fontSize": 21,
+        "fontSize": 16,
         "typeface": "Helvetica Neue",
-        "color": "#000000",
+        "color": "#4B5563",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -895,34 +313,30 @@
         }
       },
       "textLayout": {
-        "lineCount": 2,
+        "lineCount": 1,
         "lines": [
           {
             "index": 1,
-            "text": "Feed deployment logs"
-          },
-          {
-            "index": 2,
-            "text": "back into AIDL prompts."
+            "text": "AIDL contribution"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Feed deployment logs back into AIDL prompts.",
+          "text": "AIDL contribution",
           "resolvedTextStyle": {
-            "fontSize": 21,
+            "fontSize": 16,
             "typeface": "Helvetica Neue",
-            "color": "#000000"
+            "color": "#4B5563"
           },
           "runs": [
             {
               "index": 1,
-              "text": "Feed deployment logs back into AIDL prompts.",
-              "fontSize": 21,
+              "text": "AIDL contribution",
+              "fontSize": 16,
               "typeface": "Helvetica Neue",
-              "color": "#000000"
+              "color": "#4B5563"
             }
           ],
           "marginLeft": 0
@@ -931,42 +345,42 @@
       "lineWidth": 0
     },
     {
-      "order": 22,
+      "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ih03mhsz",
-      "id": "22",
+      "aid": "sh/nyxcfix0",
+      "id": "7",
       "bbox": [
-        880,
-        337,
-        10,
-        10
-      ],
-      "geometry": "ellipse",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 23,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/ji94vmtk",
-      "id": "23",
-      "bbox": [
-        906,
-        330,
-        262,
-        60
+        584,
+        198,
+        360,
+        78
       ],
       "geometry": "rect",
-      "text": "Convert recurring fixes into playbook updates.",
-      "textPreview": "Convert recurring fixes into playbook updates.",
-      "resolvedFontSize": 21,
+      "fillColor": "#EAF5FB",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wnqdcneh",
+      "id": "8",
+      "bbox": [
+        598,
+        212,
+        332,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Ansible control",
+      "textPreview": "Ansible control",
+      "resolvedFontSize": 16,
       "resolvedTextStyle": {
-        "fontSize": 21,
+        "fontSize": 16,
         "typeface": "Helvetica Neue",
-        "color": "#000000",
+        "color": "#4B5563",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -976,34 +390,30 @@
         }
       },
       "textLayout": {
-        "lineCount": 2,
+        "lineCount": 1,
         "lines": [
           {
             "index": 1,
-            "text": "Convert recurring fixes"
-          },
-          {
-            "index": 2,
-            "text": "into playbook updates."
+            "text": "Ansible control"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Convert recurring fixes into playbook updates.",
+          "text": "Ansible control",
           "resolvedTextStyle": {
-            "fontSize": 21,
+            "fontSize": 16,
             "typeface": "Helvetica Neue",
-            "color": "#000000"
+            "color": "#4B5563"
           },
           "runs": [
             {
               "index": 1,
-              "text": "Convert recurring fixes into playbook updates.",
-              "fontSize": 21,
+              "text": "Ansible control",
+              "fontSize": 16,
               "typeface": "Helvetica Neue",
-              "color": "#000000"
+              "color": "#4B5563"
             }
           ],
           "marginLeft": 0
@@ -1012,42 +422,42 @@
       "lineWidth": 0
     },
     {
-      "order": 24,
+      "order": 9,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/sni5sra1",
-      "id": "24",
+      "aid": "sh/xozelsv2",
+      "id": "9",
       "bbox": [
-        880,
-        407,
-        10,
-        10
-      ],
-      "geometry": "ellipse",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 25,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/torm1wbm",
-      "id": "25",
-      "bbox": [
-        906,
-        400,
-        262,
-        60
+        944,
+        198,
+        250,
+        78
       ],
       "geometry": "rect",
-      "text": "Use verification as delivery evidence.",
-      "textPreview": "Use verification as delivery evidence.",
-      "resolvedFontSize": 21,
+      "fillColor": "#EAF5FB",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9cj2lozu",
+      "id": "10",
+      "bbox": [
+        958,
+        212,
+        222,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Delivery outcome",
+      "textPreview": "Delivery outcome",
+      "resolvedFontSize": 16,
       "resolvedTextStyle": {
-        "fontSize": 21,
+        "fontSize": 16,
         "typeface": "Helvetica Neue",
-        "color": "#000000",
+        "color": "#4B5563",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -1057,34 +467,30 @@
         }
       },
       "textLayout": {
-        "lineCount": 2,
+        "lineCount": 1,
         "lines": [
           {
             "index": 1,
-            "text": "Use verification as"
-          },
-          {
-            "index": 2,
-            "text": "delivery evidence."
+            "text": "Delivery outcome"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Use verification as delivery evidence.",
+          "text": "Delivery outcome",
           "resolvedTextStyle": {
-            "fontSize": 21,
+            "fontSize": 16,
             "typeface": "Helvetica Neue",
-            "color": "#000000"
+            "color": "#4B5563"
           },
           "runs": [
             {
               "index": 1,
-              "text": "Use verification as delivery evidence.",
-              "fontSize": 21,
+              "text": "Delivery outcome",
+              "fontSize": 16,
               "typeface": "Helvetica Neue",
-              "color": "#000000"
+              "color": "#4B5563"
             }
           ],
           "marginLeft": 0
@@ -1093,23 +499,40 @@
       "lineWidth": 0
     },
     {
-      "order": 26,
+      "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/6l0nqhsb",
-      "id": "26",
+      "aid": "sh/8balcjy9",
+      "id": "11",
       "bbox": [
-        70,
-        590,
-        1040,
-        58
+        54,
+        276,
+        190,
+        78
       ],
       "geometry": "rect",
-      "text": "Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and promote with the same Ansible playbook plus environment-specific vars.",
-      "textPreview": "Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and promote with the same Ansible playbook plus environme...",
-      "resolvedFontSize": 24,
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nq1kjyho",
+      "id": "12",
+      "bbox": [
+        68,
+        290,
+        162,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Pull request",
+      "textPreview": "Pull request",
+      "resolvedFontSize": 18,
       "resolvedTextStyle": {
-        "fontSize": 24,
+        "fontSize": 18,
         "typeface": "Helvetica Neue",
         "color": "#000000",
         "bold": true,
@@ -1122,24 +545,20 @@
         }
       },
       "textLayout": {
-        "lineCount": 2,
+        "lineCount": 1,
         "lines": [
           {
             "index": 1,
-            "text": "Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and"
-          },
-          {
-            "index": 2,
-            "text": "promote with the same Ansible playbook plus environment-specific vars."
+            "text": "Pull request"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and promote with the same Ansible playbook plus environment-specific vars.",
+          "text": "Pull request",
           "resolvedTextStyle": {
-            "fontSize": 24,
+            "fontSize": 18,
             "typeface": "Helvetica Neue",
             "color": "#000000",
             "bold": true
@@ -1147,11 +566,561 @@
           "runs": [
             {
               "index": 1,
-              "text": "Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and promote with the same Ansible playbook plus environment-specific vars.",
-              "fontSize": 24,
+              "text": "Pull request",
+              "fontSize": 18,
               "typeface": "Helvetica Neue",
               "color": "#000000",
               "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mp83atg3",
+      "id": "13",
+      "bbox": [
+        244,
+        276,
+        340,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hgj2p8zq",
+      "id": "14",
+      "bbox": [
+        258,
+        290,
+        312,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Generate criteria, risks, and test ideas.",
+      "textPreview": "Generate criteria, risks, and test ideas.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Generate criteria, risks, and test ideas."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Generate criteria, risks, and test ideas.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Generate criteria, risks, and test ideas.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wfalg3y5",
+      "id": "15",
+      "bbox": [
+        584,
+        276,
+        360,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ve1knyhk",
+      "id": "16",
+      "bbox": [
+        598,
+        290,
+        332,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Run syntax, lint, and idempotency checks.",
+      "textPreview": "Run syntax, lint, and idempotency checks.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Run syntax, lint, and idempotency checks."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Run syntax, lint, and idempotency checks.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Run syntax, lint, and idempotency checks.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uds3etgz",
+      "id": "17",
+      "bbox": [
+        944,
+        276,
+        250,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dkz2d4zm",
+      "id": "18",
+      "bbox": [
+        958,
+        290,
+        222,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Automatable review gate.",
+      "textPreview": "Automatable review gate.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Automatable review gate."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Automatable review gate.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Automatable review gate.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cjq14zy1",
+      "id": "19",
+      "bbox": [
+        54,
+        354,
+        190,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#F6F7F9",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofutg3at",
+      "id": "20",
+      "bbox": [
+        68,
+        368,
+        162,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Dev deploy",
+      "textPreview": "Dev deploy",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Dev deploy"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Dev deploy",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Dev deploy",
+              "fontSize": 18,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pg3u98be",
+      "id": "21",
+      "bbox": [
+        244,
+        354,
+        340,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#F6F7F9",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2dcbets3",
+      "id": "22",
+      "bbox": [
+        258,
+        368,
+        312,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Translate change intent into vars and runbook updates.",
+      "textPreview": "Translate change intent into vars and runbook updates.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Translate change intent into vars and"
+          },
+          {
+            "index": 2,
+            "text": "runbook updates."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Translate change intent into vars and runbook updates.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Translate change intent into vars and runbook updates.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3elc7yto",
+      "id": "23",
+      "bbox": [
+        584,
+        354,
+        360,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#F6F7F9",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c3etkna5",
+      "id": "24",
+      "bbox": [
+        598,
+        368,
+        332,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Run playbook against dev bastion and dev env file.",
+      "textPreview": "Run playbook against dev bastion and dev env file.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Run playbook against dev bastion and dev"
+          },
+          {
+            "index": 2,
+            "text": "env file."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Run playbook against dev bastion and dev env file.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Run playbook against dev bastion and dev env file.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d4nudsbq",
+      "id": "25",
+      "bbox": [
+        944,
+        354,
+        250,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#F6F7F9",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qhwbidsz",
+      "id": "26",
+      "bbox": [
+        958,
+        368,
+        222,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Fast, repeatable validation.",
+      "textPreview": "Fast, repeatable validation.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Fast, repeatable validation."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Fast, repeatable validation.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Fast, repeatable validation.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
             }
           ],
           "marginLeft": 0
@@ -1163,8 +1132,642 @@
       "order": 27,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/rm94zmtw",
+      "aid": "sh/b25cbitk",
       "id": "27",
+      "bbox": [
+        54,
+        432,
+        190,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k7edona1",
+      "id": "28",
+      "bbox": [
+        68,
+        446,
+        162,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Stage promote",
+      "textPreview": "Stage promote",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Stage promote"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Stage promote",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Stage promote",
+              "fontSize": 18,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l87uhsbm",
+      "id": "29",
+      "bbox": [
+        244,
+        432,
+        340,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v29w7mdo",
+      "id": "30",
+      "bbox": [
+        258,
+        446,
+        312,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Summarize changes and unresolved risks.",
+      "textPreview": "Summarize changes and unresolved risks.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Summarize changes and unresolved"
+          },
+          {
+            "index": 2,
+            "text": "risks."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Summarize changes and unresolved risks.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Summarize changes and unresolved risks.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u10fehcj",
+      "id": "31",
+      "bbox": [
+        584,
+        432,
+        360,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h4re9wvu",
+      "id": "32",
+      "bbox": [
+        598,
+        446,
+        332,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Reuse same playbook with staging variables.",
+      "textPreview": "Reuse same playbook with staging variables.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Reuse same playbook with staging"
+          },
+          {
+            "index": 2,
+            "text": "variables."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Reuse same playbook with staging variables.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Reuse same playbook with staging variables.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w3ixgru9",
+      "id": "33",
+      "bbox": [
+        944,
+        432,
+        250,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7ypw3mds",
+      "id": "34",
+      "bbox": [
+        958,
+        446,
+        222,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Same logic, new target.",
+      "textPreview": "Same logic, new target.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Same logic, new target."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Same logic, new target.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Same logic, new target.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mxgfahc7",
+      "id": "35",
+      "bbox": [
+        54,
+        510,
+        190,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#F6F7F9",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/90re5cvy",
+      "id": "36",
+      "bbox": [
+        68,
+        524,
+        162,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Release gate",
+      "textPreview": "Release gate",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Release gate"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Release gate",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Helvetica Neue",
+            "color": "#000000",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Release gate",
+              "fontSize": 18,
+              "typeface": "Helvetica Neue",
+              "color": "#000000",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8zyxcrud",
+      "id": "37",
+      "bbox": [
+        244,
+        510,
+        340,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#F6F7F9",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rutgf6dw",
+      "id": "38",
+      "bbox": [
+        258,
+        524,
+        312,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Explain failure signals and next fixes.",
+      "textPreview": "Explain failure signals and next fixes.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Explain failure signals and next fixes."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Explain failure signals and next fixes.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Explain failure signals and next fixes.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6tkfm1cr",
+      "id": "39",
+      "bbox": [
+        584,
+        510,
+        360,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#F6F7F9",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/eh0ja58v",
+      "id": "40",
+      "bbox": [
+        598,
+        524,
+        332,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Verify endpoints and Container App revision health.",
+      "textPreview": "Verify endpoints and Container App revision health.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Verify endpoints and Container App"
+          },
+          {
+            "index": 2,
+            "text": "revision health."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Verify endpoints and Container App revision health.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Verify endpoints and Container App revision health.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 41,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fi90ja9g",
+      "id": "41",
+      "bbox": [
+        944,
+        510,
+        250,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#F6F7F9",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
+    },
+    {
+      "order": 42,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0ji1cfq1",
+      "id": "42",
+      "bbox": [
+        958,
+        524,
+        222,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Evidence-backed approval.",
+      "textPreview": "Evidence-backed approval.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Helvetica Neue",
+        "color": "#4B5563",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Evidence-backed approval."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Evidence-backed approval.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Helvetica Neue",
+            "color": "#4B5563"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Evidence-backed approval.",
+              "fontSize": 16,
+              "typeface": "Helvetica Neue",
+              "color": "#4B5563"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 43,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/14rilkr6",
+      "id": "43",
       "bbox": [
         1184,
         659,

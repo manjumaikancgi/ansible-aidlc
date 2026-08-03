@@ -2,9 +2,9 @@
   "schema": "openai.presentation.layout/v4",
   "unit": "px",
   "slide": {
-    "aid": "sl/sknq0i",
-    "id": "sknq0i",
-    "slide": 3,
+    "aid": "sl/3idd1p",
+    "id": "3idd1p",
+    "slide": 7,
     "layoutId": "0aad7930-ad45-4dda-9294-6f4bc03dab2c",
     "layoutName": "Title Slide",
     "layoutType": "title",
@@ -64,7 +64,7 @@
       "order": 1,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/e58val0f",
+      "aid": "sh/hczup4vq",
       "id": "1",
       "bbox": [
         41,
@@ -73,8 +73,8 @@
         76
       ],
       "geometry": "rect",
-      "text": "Ansible makes the GS release path repeatable",
-      "textPreview": "Ansible makes the GS release path repeatable",
+      "text": "Use the pattern as a delivery operating model",
+      "textPreview": "Use the pattern as a delivery operating model",
       "resolvedFontSize": 40,
       "resolvedTextStyle": {
         "fontSize": 40,
@@ -94,14 +94,14 @@
         "lines": [
           {
             "index": 1,
-            "text": "Ansible makes the GS release path repeatable"
+            "text": "Use the pattern as a delivery operating model"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Ansible makes the GS release path repeatable",
+          "text": "Use the pattern as a delivery operating model",
           "resolvedTextStyle": {
             "fontSize": 40,
             "typeface": "Helvetica Neue",
@@ -111,7 +111,7 @@
           "runs": [
             {
               "index": 1,
-              "text": "Ansible makes the GS release path repeatable",
+              "text": "Use the pattern as a delivery operating model",
               "fontSize": 40,
               "typeface": "Helvetica Neue",
               "color": "#000000",
@@ -127,101 +127,37 @@
       "order": 2,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/18ze50j6",
+      "aid": "sh/up8vupcz",
       "id": "2",
       "bbox": [
-        41,
-        122,
-        980,
-        46
+        70,
+        165,
+        360,
+        355
       ],
       "geometry": "rect",
-      "text": "The same playbook runs from a Linux bastion, stages code, authenticates to Azure, deploys, and verifies the live app.",
-      "textPreview": "The same playbook runs from a Linux bastion, stages code, authenticates to Azure, deploys, and verifies the live app.",
-      "resolvedFontSize": 23,
-      "resolvedTextStyle": {
-        "fontSize": 23,
-        "typeface": "Helvetica Neue",
-        "color": "#4B5563",
-        "alignment": "left",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 2,
-        "lines": [
-          {
-            "index": 1,
-            "text": "The same playbook runs from a Linux bastion, stages code, authenticates to Azure, deploys,"
-          },
-          {
-            "index": 2,
-            "text": "and verifies the live app."
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "The same playbook runs from a Linux bastion, stages code, authenticates to Azure, deploys, and verifies the live app.",
-          "resolvedTextStyle": {
-            "fontSize": 23,
-            "typeface": "Helvetica Neue",
-            "color": "#4B5563"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "The same playbook runs from a Linux bastion, stages code, authenticates to Azure, deploys, and verifies the live app.",
-              "fontSize": 23,
-              "typeface": "Helvetica Neue",
-              "color": "#4B5563"
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
+      "fillColor": "#F6F7F9",
+      "lineColor": "#B8BCC4",
+      "lineWidth": 1
     },
     {
       "order": 3,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/07qdcvil",
+      "aid": "sh/vahcnudk",
       "id": "3",
       "bbox": [
-        52,
-        250,
-        200,
-        116
+        98,
+        198,
+        300,
+        34
       ],
       "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#B8BCC4",
-      "lineWidth": 1
-    },
-    {
-      "order": 4,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/nahw7a1w",
-      "id": "4",
-      "bbox": [
-        70,
-        266,
-        164,
-        30
-      ],
-      "geometry": "rect",
-      "text": "Preflight",
-      "textPreview": "Preflight",
-      "resolvedFontSize": 22,
+      "text": "Standardize",
+      "textPreview": "Standardize",
+      "resolvedFontSize": 29,
       "resolvedTextStyle": {
-        "fontSize": 22,
+        "fontSize": 29,
         "typeface": "Helvetica Neue",
         "color": "#000000",
         "bold": true,
@@ -238,16 +174,16 @@
         "lines": [
           {
             "index": 1,
-            "text": "Preflight"
+            "text": "Standardize"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Preflight",
+          "text": "Standardize",
           "resolvedTextStyle": {
-            "fontSize": 22,
+            "fontSize": 29,
             "typeface": "Helvetica Neue",
             "color": "#000000",
             "bold": true
@@ -255,8 +191,8 @@
           "runs": [
             {
               "index": 1,
-              "text": "Preflight",
-              "fontSize": 22,
+              "text": "Standardize",
+              "fontSize": 29,
               "typeface": "Helvetica Neue",
               "color": "#000000",
               "bold": true
@@ -268,25 +204,42 @@
       "lineWidth": 0
     },
     {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8n6dsfu9",
+      "id": "4",
+      "bbox": [
+        100,
+        267,
+        10,
+        10
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#3D8DFF",
+      "lineColor": "#3D8DFF",
+      "lineWidth": 0
+    },
+    {
       "order": 5,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/298ve50b",
+      "aid": "sh/9ozulkve",
       "id": "5",
       "bbox": [
-        70,
-        302,
-        164,
-        48
+        126,
+        260,
+        262,
+        60
       ],
       "geometry": "rect",
-      "text": "Validate settings and bootstrap bastion packages.",
-      "textPreview": "Validate settings and bootstrap bastion packages.",
-      "resolvedFontSize": 16,
+      "text": "Keep one playbook path across environments.",
+      "textPreview": "Keep one playbook path across environments.",
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 16,
+        "fontSize": 21,
         "typeface": "Helvetica Neue",
-        "color": "#4B5563",
+        "color": "#000000",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -296,38 +249,34 @@
         }
       },
       "textLayout": {
-        "lineCount": 3,
+        "lineCount": 2,
         "lines": [
           {
             "index": 1,
-            "text": "Validate settings"
+            "text": "Keep one playbook path"
           },
           {
             "index": 2,
-            "text": "and bootstrap"
-          },
-          {
-            "index": 3,
-            "text": "bastion packages."
+            "text": "across environments."
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Validate settings and bootstrap bastion packages.",
+          "text": "Keep one playbook path across environments.",
           "resolvedTextStyle": {
-            "fontSize": 16,
+            "fontSize": 21,
             "typeface": "Helvetica Neue",
-            "color": "#4B5563"
+            "color": "#000000"
           },
           "runs": [
             {
               "index": 1,
-              "text": "Validate settings and bootstrap bastion packages.",
-              "fontSize": 16,
+              "text": "Keep one playbook path across environments.",
+              "fontSize": 21,
               "typeface": "Helvetica Neue",
-              "color": "#4B5563"
+              "color": "#000000"
             }
           ],
           "marginLeft": 0
@@ -339,40 +288,39 @@
       "order": 6,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/pcje9kj2",
+      "aid": "sh/mlovqpc3",
       "id": "6",
       "bbox": [
-        290,
-        250,
-        200,
-        116
+        100,
+        337,
+        10,
+        10
       ],
-      "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#B8BCC4",
-      "lineWidth": 1
+      "geometry": "ellipse",
+      "fillColor": "#3D8DFF",
+      "lineColor": "#3D8DFF",
+      "lineWidth": 0
     },
     {
       "order": 7,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/obqdgfih",
+      "aid": "sh/7mxcjado",
       "id": "7",
       "bbox": [
-        308,
-        266,
-        164,
-        30
+        126,
+        330,
+        262,
+        60
       ],
       "geometry": "rect",
-      "text": "Source",
-      "textPreview": "Source",
-      "resolvedFontSize": 22,
+      "text": "Treat env files and inventory as release inputs.",
+      "textPreview": "Treat env files and inventory as release inputs.",
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 22,
+        "fontSize": 21,
         "typeface": "Helvetica Neue",
         "color": "#000000",
-        "bold": true,
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -382,32 +330,38 @@
         }
       },
       "textLayout": {
-        "lineCount": 1,
+        "lineCount": 3,
         "lines": [
           {
             "index": 1,
-            "text": "Source"
+            "text": "Treat env files and"
+          },
+          {
+            "index": 2,
+            "text": "inventory as release"
+          },
+          {
+            "index": 3,
+            "text": "inputs."
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Source",
+          "text": "Treat env files and inventory as release inputs.",
           "resolvedTextStyle": {
-            "fontSize": 22,
+            "fontSize": 21,
             "typeface": "Helvetica Neue",
-            "color": "#000000",
-            "bold": true
+            "color": "#000000"
           },
           "runs": [
             {
               "index": 1,
-              "text": "Source",
-              "fontSize": 22,
+              "text": "Treat env files and inventory as release inputs.",
+              "fontSize": 21,
               "typeface": "Helvetica Neue",
-              "color": "#000000",
-              "bold": true
+              "color": "#000000"
             }
           ],
           "marginLeft": 0
@@ -419,22 +373,39 @@
       "order": 8,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/3excv61s",
+      "aid": "sh/sjad4jud",
       "id": "8",
       "bbox": [
-        308,
-        302,
-        164,
-        48
+        100,
+        407,
+        10,
+        10
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#3D8DFF",
+      "lineColor": "#3D8DFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tkjexovy",
+      "id": "9",
+      "bbox": [
+        126,
+        400,
+        262,
+        60
       ],
       "geometry": "rect",
-      "text": "Use copy, git, or existing checkout strategy.",
-      "textPreview": "Use copy, git, or existing checkout strategy.",
-      "resolvedFontSize": 16,
+      "text": "Make bastion source strategy explicit.",
+      "textPreview": "Make bastion source strategy explicit.",
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 16,
+        "fontSize": 21,
         "typeface": "Helvetica Neue",
-        "color": "#4B5563",
+        "color": "#000000",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -444,38 +415,34 @@
         }
       },
       "textLayout": {
-        "lineCount": 3,
+        "lineCount": 2,
         "lines": [
           {
             "index": 1,
-            "text": "Use copy, git, or"
+            "text": "Make bastion source"
           },
           {
             "index": 2,
-            "text": "existing checkout"
-          },
-          {
-            "index": 3,
-            "text": "strategy."
+            "text": "strategy explicit."
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Use copy, git, or existing checkout strategy.",
+          "text": "Make bastion source strategy explicit.",
           "resolvedTextStyle": {
-            "fontSize": 16,
+            "fontSize": 21,
             "typeface": "Helvetica Neue",
-            "color": "#4B5563"
+            "color": "#000000"
           },
           "runs": [
             {
               "index": 1,
-              "text": "Use copy, git, or existing checkout strategy.",
-              "fontSize": 16,
+              "text": "Make bastion source strategy explicit.",
+              "fontSize": 21,
               "typeface": "Helvetica Neue",
-              "color": "#4B5563"
+              "color": "#000000"
             }
           ],
           "marginLeft": 0
@@ -484,16 +451,16 @@
       "lineWidth": 0
     },
     {
-      "order": 9,
+      "order": 10,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/idov21k7",
-      "id": "9",
+      "aid": "sh/tsjaxgb6",
+      "id": "10",
       "bbox": [
-        528,
-        250,
-        200,
-        116
+        460,
+        165,
+        360,
+        355
       ],
       "geometry": "rect",
       "fillColor": "#FFFFFF",
@@ -501,23 +468,23 @@
       "lineWidth": 1
     },
     {
-      "order": 10,
+      "order": 11,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/03ulkfep",
-      "id": "10",
+      "aid": "sh/8ra94ba1",
+      "id": "11",
       "bbox": [
-        546,
-        266,
-        164,
-        30
+        488,
+        198,
+        300,
+        34
       ],
       "geometry": "rect",
-      "text": "Azure auth",
-      "textPreview": "Azure auth",
-      "resolvedFontSize": 22,
+      "text": "Govern",
+      "textPreview": "Govern",
+      "resolvedFontSize": 29,
       "resolvedTextStyle": {
-        "fontSize": 22,
+        "fontSize": 29,
         "typeface": "Helvetica Neue",
         "color": "#000000",
         "bold": true,
@@ -534,16 +501,16 @@
         "lines": [
           {
             "index": 1,
-            "text": "Azure auth"
+            "text": "Govern"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Azure auth",
+          "text": "Govern",
           "resolvedTextStyle": {
-            "fontSize": 22,
+            "fontSize": 29,
             "typeface": "Helvetica Neue",
             "color": "#000000",
             "bold": true
@@ -551,79 +518,11 @@
           "runs": [
             {
               "index": 1,
-              "text": "Azure auth",
-              "fontSize": 22,
+              "text": "Govern",
+              "fontSize": 29,
               "typeface": "Helvetica Neue",
               "color": "#000000",
               "bold": true
-            }
-          ],
-          "marginLeft": 0
-        }
-      ],
-      "lineWidth": 0
-    },
-    {
-      "order": 11,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/1432dkfu",
-      "id": "11",
-      "bbox": [
-        546,
-        302,
-        164,
-        48
-      ],
-      "geometry": "rect",
-      "text": "Use existing login, managed identity, or service principal.",
-      "textPreview": "Use existing login, managed identity, or service principal.",
-      "resolvedFontSize": 16,
-      "resolvedTextStyle": {
-        "fontSize": 16,
-        "typeface": "Helvetica Neue",
-        "color": "#4B5563",
-        "alignment": "left",
-        "insets": {
-          "top": 4.8,
-          "right": 9.6,
-          "bottom": 4.8,
-          "left": 9.6
-        }
-      },
-      "textLayout": {
-        "lineCount": 3,
-        "lines": [
-          {
-            "index": 1,
-            "text": "Use existing login,"
-          },
-          {
-            "index": 2,
-            "text": "managed identity,"
-          },
-          {
-            "index": 3,
-            "text": "or service principal."
-          }
-        ]
-      },
-      "paragraphs": [
-        {
-          "index": 1,
-          "text": "Use existing login, managed identity, or service principal.",
-          "resolvedTextStyle": {
-            "fontSize": 16,
-            "typeface": "Helvetica Neue",
-            "color": "#4B5563"
-          },
-          "runs": [
-            {
-              "index": 1,
-              "text": "Use existing login, managed identity, or service principal.",
-              "fontSize": 16,
-              "typeface": "Helvetica Neue",
-              "color": "#4B5563"
             }
           ],
           "marginLeft": 0
@@ -635,40 +534,39 @@
       "order": 12,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/e1s3i5wj",
+      "aid": "sh/7q1sv6tg",
       "id": "12",
       "bbox": [
-        766,
-        250,
-        200,
-        116
+        490,
+        267,
+        10,
+        10
       ],
-      "geometry": "rect",
-      "fillColor": "#FFFFFF",
-      "lineColor": "#B8BCC4",
-      "lineWidth": 1
+      "geometry": "ellipse",
+      "fillColor": "#3D8DFF",
+      "lineColor": "#3D8DFF",
+      "lineWidth": 0
     },
     {
       "order": 13,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/f2lkbax4",
+      "aid": "sh/65sr21sv",
       "id": "13",
       "bbox": [
-        784,
-        266,
-        164,
-        30
+        516,
+        260,
+        262,
+        60
       ],
       "geometry": "rect",
-      "text": "Deploy",
-      "textPreview": "Deploy",
-      "resolvedFontSize": 22,
+      "text": "Approve RBAC, secrets, and risky infra.",
+      "textPreview": "Approve RBAC, secrets, and risky infra.",
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 22,
+        "fontSize": 21,
         "typeface": "Helvetica Neue",
         "color": "#000000",
-        "bold": true,
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -678,32 +576,34 @@
         }
       },
       "textLayout": {
-        "lineCount": 1,
+        "lineCount": 2,
         "lines": [
           {
             "index": 1,
-            "text": "Deploy"
+            "text": "Approve RBAC, secrets,"
+          },
+          {
+            "index": 2,
+            "text": "and risky infra."
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Deploy",
+          "text": "Approve RBAC, secrets, and risky infra.",
           "resolvedTextStyle": {
-            "fontSize": 22,
+            "fontSize": 21,
             "typeface": "Helvetica Neue",
-            "color": "#000000",
-            "bold": true
+            "color": "#000000"
           },
           "runs": [
             {
               "index": 1,
-              "text": "Deploy",
-              "fontSize": 22,
+              "text": "Approve RBAC, secrets, and risky infra.",
+              "fontSize": 21,
               "typeface": "Helvetica Neue",
-              "color": "#000000",
-              "bold": true
+              "color": "#000000"
             }
           ],
           "marginLeft": 0
@@ -715,22 +615,39 @@
       "order": 14,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/o7ulofel",
+      "aid": "sh/l4jqtwba",
       "id": "14",
       "bbox": [
-        784,
-        302,
-        164,
-        48
+        490,
+        337,
+        10,
+        10
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#3D8DFF",
+      "lineColor": "#3D8DFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k3q90rap",
+      "id": "15",
+      "bbox": [
+        516,
+        330,
+        262,
+        60
       ],
       "geometry": "rect",
-      "text": "Run app-only update or Terraform-backed stack flow.",
-      "textPreview": "Run app-only update or Terraform-backed stack flow.",
-      "resolvedFontSize": 16,
+      "text": "Let CI run validation before promotion.",
+      "textPreview": "Let CI run validation before promotion.",
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 16,
+        "fontSize": 21,
         "typeface": "Helvetica Neue",
-        "color": "#4B5563",
+        "color": "#000000",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -740,42 +657,34 @@
         }
       },
       "textLayout": {
-        "lineCount": 4,
+        "lineCount": 2,
         "lines": [
           {
             "index": 1,
-            "text": "Run app-only"
+            "text": "Let CI run validation"
           },
           {
             "index": 2,
-            "text": "update or"
-          },
-          {
-            "index": 3,
-            "text": "Terraform-backed"
-          },
-          {
-            "index": 4,
-            "text": "stack flow."
+            "text": "before promotion."
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Run app-only update or Terraform-backed stack flow.",
+          "text": "Let CI run validation before promotion.",
           "resolvedTextStyle": {
-            "fontSize": 16,
+            "fontSize": 21,
             "typeface": "Helvetica Neue",
-            "color": "#4B5563"
+            "color": "#000000"
           },
           "runs": [
             {
               "index": 1,
-              "text": "Run app-only update or Terraform-backed stack flow.",
-              "fontSize": 16,
+              "text": "Let CI run validation before promotion.",
+              "fontSize": 21,
               "typeface": "Helvetica Neue",
-              "color": "#4B5563"
+              "color": "#000000"
             }
           ],
           "marginLeft": 0
@@ -784,40 +693,117 @@
       "lineWidth": 0
     },
     {
-      "order": 15,
+      "order": 16,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/p83mhkf6",
-      "id": "15",
+      "aid": "sh/j2h8rmt4",
+      "id": "16",
       "bbox": [
-        1004,
-        250,
-        200,
-        116
+        490,
+        407,
+        10,
+        10
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#3D8DFF",
+      "lineColor": "#3D8DFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y18ry1sj",
+      "id": "17",
+      "bbox": [
+        516,
+        400,
+        262,
+        60
       ],
       "geometry": "rect",
-      "fillColor": "#FFFFFF",
+      "text": "Keep identity paths clear.",
+      "textPreview": "Keep identity paths clear.",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Keep identity paths clear."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Keep identity paths clear.",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Helvetica Neue",
+            "color": "#000000"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Keep identity paths clear.",
+              "fontSize": 21,
+              "typeface": "Helvetica Neue",
+              "color": "#000000"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/503a50be",
+      "id": "18",
+      "bbox": [
+        850,
+        165,
+        360,
+        355
+      ],
+      "geometry": "rect",
+      "fillColor": "#EAF5FB",
       "lineColor": "#B8BCC4",
       "lineWidth": 1
     },
     {
-      "order": 16,
+      "order": 19,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/25c3mpwf",
-      "id": "16",
+      "aid": "sh/4zu9cvat",
+      "id": "19",
       "bbox": [
-        1022,
-        266,
-        164,
-        30
+        878,
+        198,
+        300,
+        34
       ],
       "geometry": "rect",
-      "text": "Verify",
-      "textPreview": "Verify",
-      "resolvedFontSize": 22,
+      "text": "Learn",
+      "textPreview": "Learn",
+      "resolvedFontSize": 29,
       "resolvedTextStyle": {
-        "fontSize": 22,
+        "fontSize": 29,
         "typeface": "Helvetica Neue",
         "color": "#000000",
         "bold": true,
@@ -834,16 +820,16 @@
         "lines": [
           {
             "index": 1,
-            "text": "Verify"
+            "text": "Learn"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Verify",
+          "text": "Learn",
           "resolvedTextStyle": {
-            "fontSize": 22,
+            "fontSize": 29,
             "typeface": "Helvetica Neue",
             "color": "#000000",
             "bold": true
@@ -851,8 +837,8 @@
           "runs": [
             {
               "index": 1,
-              "text": "Verify",
-              "fontSize": 22,
+              "text": "Learn",
+              "fontSize": 29,
               "typeface": "Helvetica Neue",
               "color": "#000000",
               "bold": true
@@ -864,25 +850,42 @@
       "lineWidth": 0
     },
     {
-      "order": 17,
+      "order": 20,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/n6lkfax0",
-      "id": "17",
+      "aid": "sh/ofmlo3mh",
+      "id": "20",
       "bbox": [
-        1022,
-        302,
-        164,
-        48
+        880,
+        267,
+        10,
+        10
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#3D8DFF",
+      "lineColor": "#3D8DFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gv2x832",
+      "id": "21",
+      "bbox": [
+        906,
+        260,
+        262,
+        60
       ],
       "geometry": "rect",
-      "text": "Check Container App revision and application endpoints.",
-      "textPreview": "Check Container App revision and application endpoints.",
-      "resolvedFontSize": 16,
+      "text": "Feed deployment logs back into AIDL prompts.",
+      "textPreview": "Feed deployment logs back into AIDL prompts.",
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 16,
+        "fontSize": 21,
         "typeface": "Helvetica Neue",
-        "color": "#4B5563",
+        "color": "#000000",
         "alignment": "left",
         "insets": {
           "top": 4.8,
@@ -892,42 +895,34 @@
         }
       },
       "textLayout": {
-        "lineCount": 4,
+        "lineCount": 2,
         "lines": [
           {
             "index": 1,
-            "text": "Check Container"
+            "text": "Feed deployment logs"
           },
           {
             "index": 2,
-            "text": "App revision and"
-          },
-          {
-            "index": 3,
-            "text": "application"
-          },
-          {
-            "index": 4,
-            "text": "endpoints."
+            "text": "back into AIDL prompts."
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Check Container App revision and application endpoints.",
+          "text": "Feed deployment logs back into AIDL prompts.",
           "resolvedTextStyle": {
-            "fontSize": 16,
+            "fontSize": 21,
             "typeface": "Helvetica Neue",
-            "color": "#4B5563"
+            "color": "#000000"
           },
           "runs": [
             {
               "index": 1,
-              "text": "Check Container App revision and application endpoints.",
-              "fontSize": 16,
+              "text": "Feed deployment logs back into AIDL prompts.",
+              "fontSize": 21,
               "typeface": "Helvetica Neue",
-              "color": "#4B5563"
+              "color": "#000000"
             }
           ],
           "marginLeft": 0
@@ -936,108 +931,185 @@
       "lineWidth": 0
     },
     {
-      "order": 18,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/4balcveh",
-      "id": "18",
-      "bbox": [
-        257,
-        300,
-        26,
-        16
-      ],
-      "geometry": "rightArrow",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 19,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/5cj250f2",
-      "id": "19",
-      "bbox": [
-        495,
-        300,
-        26,
-        16
-      ],
-      "geometry": "rightArrow",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 20,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/lgrats3e",
-      "id": "20",
-      "bbox": [
-        733,
-        300,
-        26,
-        16
-      ],
-      "geometry": "rightArrow",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
-      "order": 21,
-      "kind": "shape",
-      "scope": "slide",
-      "aid": "sh/kvi9knmt",
-      "id": "21",
-      "bbox": [
-        971,
-        300,
-        26,
-        16
-      ],
-      "geometry": "rightArrow",
-      "fillColor": "#3D8DFF",
-      "lineColor": "#3D8DFF",
-      "lineWidth": 0
-    },
-    {
       "order": 22,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/zu9sril8",
+      "aid": "sh/md43mt4b",
       "id": "22",
       "bbox": [
-        110,
-        482,
-        1058,
-        86
+        880,
+        337,
+        10,
+        10
       ],
-      "geometry": "rect",
-      "fillColor": "#EAF5FB",
-      "lineColor": "#B8BCC4",
-      "lineWidth": 1
+      "geometry": "ellipse",
+      "fillColor": "#3D8DFF",
+      "lineColor": "#3D8DFF",
+      "lineWidth": 0
     },
     {
       "order": 23,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/ytgrid43",
+      "aid": "sh/nedkvylw",
       "id": "23",
       "bbox": [
-        134,
-        506,
-        1000,
-        40
+        906,
+        330,
+        262,
+        60
       ],
       "geometry": "rect",
-      "text": "Delivery benefit: one automation contract can be run by a person, the UI console, or a CI/CD runner.",
-      "textPreview": "Delivery benefit: one automation contract can be run by a person, the UI console, or a CI/CD runner.",
-      "resolvedFontSize": 25,
+      "text": "Convert recurring fixes into playbook updates.",
+      "textPreview": "Convert recurring fixes into playbook updates.",
+      "resolvedFontSize": 21,
       "resolvedTextStyle": {
-        "fontSize": 25,
+        "fontSize": 21,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Convert recurring fixes"
+          },
+          {
+            "index": 2,
+            "text": "into playbook updates."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Convert recurring fixes into playbook updates.",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Helvetica Neue",
+            "color": "#000000"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Convert recurring fixes into playbook updates.",
+              "fontSize": 21,
+              "typeface": "Helvetica Neue",
+              "color": "#000000"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0b2lkjm5",
+      "id": "24",
+      "bbox": [
+        880,
+        407,
+        10,
+        10
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#3D8DFF",
+      "lineColor": "#3D8DFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cb2to3q",
+      "id": "25",
+      "bbox": [
+        906,
+        400,
+        262,
+        60
+      ],
+      "geometry": "rect",
+      "text": "Use verification as delivery evidence.",
+      "textPreview": "Use verification as delivery evidence.",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "Helvetica Neue",
+        "color": "#000000",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Use verification as"
+          },
+          {
+            "index": 2,
+            "text": "delivery evidence."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Use verification as delivery evidence.",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Helvetica Neue",
+            "color": "#000000"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Use verification as delivery evidence.",
+              "fontSize": 21,
+              "typeface": "Helvetica Neue",
+              "color": "#000000"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e9k3i94f",
+      "id": "26",
+      "bbox": [
+        70,
+        590,
+        1040,
+        58
+      ],
+      "geometry": "rect",
+      "text": "Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and promote with the same Ansible playbook plus environment-specific vars.",
+      "textPreview": "Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and promote with the same Ansible playbook plus environme...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
         "typeface": "Helvetica Neue",
         "color": "#000000",
         "bold": true,
@@ -1054,20 +1126,20 @@
         "lines": [
           {
             "index": 1,
-            "text": "Delivery benefit: one automation contract can be run by a person, the UI console,"
+            "text": "Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and"
           },
           {
             "index": 2,
-            "text": "or a CI/CD runner."
+            "text": "promote with the same Ansible playbook plus environment-specific vars."
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "Delivery benefit: one automation contract can be run by a person, the UI console, or a CI/CD runner.",
+          "text": "Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and promote with the same Ansible playbook plus environment-specific vars.",
           "resolvedTextStyle": {
-            "fontSize": 25,
+            "fontSize": 24,
             "typeface": "Helvetica Neue",
             "color": "#000000",
             "bold": true
@@ -1075,8 +1147,8 @@
           "runs": [
             {
               "index": 1,
-              "text": "Delivery benefit: one automation contract can be run by a person, the UI console, or a CI/CD runner.",
-              "fontSize": 25,
+              "text": "Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and promote with the same Ansible playbook plus environment-specific vars.",
+              "fontSize": 24,
               "typeface": "Helvetica Neue",
               "color": "#000000",
               "bold": true
@@ -1088,11 +1160,11 @@
       "lineWidth": 0
     },
     {
-      "order": 24,
+      "order": 27,
       "kind": "shape",
       "scope": "slide",
-      "aid": "sh/9kraxs3q",
-      "id": "24",
+      "aid": "sh/zatkrel0",
+      "id": "27",
       "bbox": [
         1184,
         659,
@@ -1100,8 +1172,8 @@
         26
       ],
       "geometry": "rect",
-      "text": "3",
-      "textPreview": "3",
+      "text": "7",
+      "textPreview": "7",
       "resolvedFontSize": 13,
       "resolvedTextStyle": {
         "fontSize": 13,
@@ -1120,14 +1192,14 @@
         "lines": [
           {
             "index": 1,
-            "text": "3"
+            "text": "7"
           }
         ]
       },
       "paragraphs": [
         {
           "index": 1,
-          "text": "3",
+          "text": "7",
           "resolvedTextStyle": {
             "fontSize": 13,
             "typeface": "Helvetica Neue",
@@ -1137,7 +1209,7 @@
           "runs": [
             {
               "index": 1,
-              "text": "3",
+              "text": "7",
               "fontSize": 13,
               "typeface": "Helvetica Neue",
               "color": "#000000",

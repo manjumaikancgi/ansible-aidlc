@@ -64,6 +64,10 @@
     gs_require_terraform_tfvars: true
     gs_terraform_apply_bootstrap: true
     gs_terraform_auto_approve: true
+    gs_skip_after_terraform_apply_failure: true
+    gs_terraform_apply_failed: false
+    gs_terraform_apply_failure_stage: ""
+    gs_terraform_apply_failure_message: ""
     gs_terraform_working_dir: "{{ gs_app_repo_path }}/infra/terraform"
     gs_terraform_tfvars_local_src: ""
     gs_terraform_tfvars_content: ""
@@ -624,9 +628,23 @@
               }}
           args:
             chdir: "{{ gs_terraform_working_dir }}"
-          changed_when: true
+          register: gs_terraform_bootstrap_apply
+          changed_when: gs_terraform_bootstrap_apply.rc == 0
+          failed_when:
+            - not (gs_skip_after_terraform_apply_failure | bool)
+            - gs_terraform_bootstrap_apply.rc != 0
           environment: "{{ gs_command_environment }}"
           when: gs_terraform_apply_bootstrap | bool
+
+        - name: Mark failed Terraform bootstrap apply as skipped
+          ansible.builtin.set_fact:
+            gs_terraform_apply_failed: true
+            gs_terraform_apply_failure_stage: Bootstrap Terraform ACR resources
+            gs_terraform_apply_failure_message: "{{ ((gs_terraform_bootstrap_apply.stderr | default('', true)) ~ '\n' ~ (gs_terraform_bootstrap_apply.stdout | default('', true))) | trim }}"
+          when:
+            - gs_terraform_apply_bootstrap | bool
+            - (gs_terraform_bootstrap_apply.rc | default(0)) != 0
+            - gs_skip_after_terraform_apply_failure | bool
 
         - name: Read Terraform ACR name
           ansible.builtin.command:
@@ -640,6 +658,7 @@
           changed_when: false
           environment: "{{ gs_command_environment }}"
           register: gs_terraform_acr_name
+          when: not (gs_terraform_apply_failed | bool)
 
         - name: Read Terraform ACR login server
           ansible.builtin.command:
@@ -653,6 +672,7 @@
           changed_when: false
           environment: "{{ gs_command_environment }}"
           register: gs_terraform_acr_login_server
+          when: not (gs_terraform_apply_failed | bool)
 
         - name: Build image in Azure Container Registry
           ansible.builtin.command:
@@ -669,6 +689,7 @@
             chdir: "{{ gs_app_repo_path }}"
           changed_when: true
           environment: "{{ gs_command_environment }}"
+          when: not (gs_terraform_apply_failed | bool)
 
         - name: Apply Terraform stack with built image
           ansible.builtin.command:
@@ -680,8 +701,23 @@
               }}
           args:
             chdir: "{{ gs_terraform_working_dir }}"
-          changed_when: true
+          register: gs_terraform_stack_apply
+          changed_when: gs_terraform_stack_apply.rc == 0
+          failed_when:
+            - not (gs_skip_after_terraform_apply_failure | bool)
+            - gs_terraform_stack_apply.rc != 0
           environment: "{{ gs_command_environment }}"
+          when: not (gs_terraform_apply_failed | bool)
+
+        - name: Mark failed Terraform stack apply as skipped
+          ansible.builtin.set_fact:
+            gs_terraform_apply_failed: true
+            gs_terraform_apply_failure_stage: Apply Terraform stack with built image
+            gs_terraform_apply_failure_message: "{{ ((gs_terraform_stack_apply.stderr | default('', true)) ~ '\n' ~ (gs_terraform_stack_apply.stdout | default('', true))) | trim }}"
+          when:
+            - not (gs_terraform_apply_failed | bool)
+            - (gs_terraform_stack_apply.rc | default(0)) != 0
+            - gs_skip_after_terraform_apply_failure | bool
 
         - name: Read Terraform deployment outputs
           ansible.builtin.command:
@@ -698,13 +734,15 @@
             - container_app_url
             - container_app_name
             - resource_group_name
-            - container_image
+              - container_image
           register: gs_terraform_outputs
+          when: not (gs_terraform_apply_failed | bool)
 
         - name: Capture Terraform deployment facts
           ansible.builtin.set_fact:
             gs_terraform_output_map: "{{ gs_terraform_output_map | default({}) | combine({item.item: item.stdout}) }}"
-          loop: "{{ gs_terraform_outputs.results }}"
+          loop: "{{ gs_terraform_outputs.results | default([]) }}"
+          when: not (gs_terraform_apply_failed | bool)
 
         - name: Set Terraform deployment facts
           ansible.builtin.set_fact:
@@ -712,6 +750,14 @@
             gs_deployed_image_ref: "{{ gs_terraform_output_map.container_image }}"
             gs_deployed_resource_group: "{{ gs_terraform_output_map.resource_group_name }}"
             gs_deployed_container_app_name: "{{ gs_terraform_output_map.container_app_name }}"
+          when: not (gs_terraform_apply_failed | bool)
+
+        - name: Report skipped Terraform deployment after apply failure
+          ansible.builtin.debug:
+            msg:
+              - "Skipping remaining Terraform deployment work because this apply stage failed: {{ gs_terraform_apply_failure_stage }}."
+              - "{{ gs_terraform_apply_failure_message }}"
+          when: gs_terraform_apply_failed | bool
 
     - name: Require deployed application URL
       ansible.builtin.assert:
@@ -719,12 +765,14 @@
           - gs_deployed_app_url is defined
           - gs_deployed_app_url is match('^https://')
         fail_msg: "Deployment completed but no HTTPS application URL could be resolved."
+      when: not (gs_terraform_apply_failed | bool)
 
     - name: Verify Azure Container App revision from bastion
       when:
         - gs_verify_application | bool
-        - gs_deployed_resource_group | length > 0
-        - gs_deployed_container_app_name | length > 0
+        - not (gs_terraform_apply_failed | bool)
+        - (gs_deployed_resource_group | default('')) | length > 0
+        - (gs_deployed_container_app_name | default('')) | length > 0
       block:
         - name: Read Container App details
           ansible.builtin.command:
@@ -785,14 +833,18 @@
       loop: "{{ gs_verification_endpoints }}"
       loop_control:
         label: "{{ item.name }}"
-      when: gs_verify_application | bool
+      when:
+        - gs_verify_application | bool
+        - not (gs_terraform_apply_failed | bool)
 
     - name: Deployment summary
       ansible.builtin.debug:
         msg:
           - "Deployment host: {{ inventory_hostname }}"
           - "Deployment mode: {{ gs_deployment_mode }}"
-          - "Application URL: {{ gs_deployed_app_url }}"
+          - "Terraform apply skipped after failure: {{ gs_terraform_apply_failed }}"
+          - "Terraform failure stage: {{ gs_terraform_apply_failure_stage | default('') }}"
+          - "Application URL: {{ gs_deployed_app_url | default('not resolved') }}"
           - "Container App: {{ gs_deployed_container_app_name | default('unknown') }}"
           - "Resource group: {{ gs_deployed_resource_group | default('unknown') }}"
           - "Image: {{ gs_deployed_image_ref | default(gs_image_name ~ ':' ~ gs_effective_image_tag) }}"

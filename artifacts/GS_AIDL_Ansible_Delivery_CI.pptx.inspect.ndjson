@@ -1,0 +1,170 @@
+{"kind":"deck","id":"pr/u9wikn","name":"Deck"}
+{"kind":"layout","layoutId":"2aa743d0-66bb-45df-a83d-ddb11e78ac3b","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"7d4445af-de24-4920-b9f3-92cf3344a38d","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/ydaaqd","slide":1,"title":"AIDL + Ansible on Good Shepherd","textShapes":11}
+{"kind":"textbox","id":"sh/4nqpozi1","slide":1,"text":"AIDL + Ansible on Good Shepherd","textPreview":"AIDL + Ansible on Good Shepherd","textChars":31,"textLines":1,"bbox":[41,46,720,72]}
+{"kind":"textbox","id":"sh/jmh8vu1g","slide":1,"text":"Using AI-assisted delivery with Ansible as the execution layer for repeatable Azure releases.","textPreview":"Using AI-assisted delivery with Ansible as the execution layer for repeatable Azure releases.","textChars":93,"textLines":1,"bbox":[41,188,570,150]}
+{"kind":"textbox","id":"sh/i187m90b","slide":1,"text":"AI proposes. Ansible applies. Tests prove. Humans approve. Operations observe.","textPreview":"AI proposes. Ansible applies. Tests prove. Humans approve. Operations observe.","textChars":78,"textLines":1,"bbox":[41,535,560,70]}
+{"kind":"shape","id":"sh/h0fqt4jq","slide":1,"bbox":[682,65,520,548]}
+{"kind":"shape","id":"sh/wz6pkzi5","slide":1,"bbox":[724,111,28,28]}
+{"kind":"textbox","id":"sh/vyx8ru1k","slide":1,"text":"Discover","textPreview":"Discover","textChars":8,"textLines":1,"bbox":[774,106,250,38]}
+{"kind":"shape","id":"sh/uxo7ipkz","slide":1,"bbox":[738,150,0,42]}
+{"kind":"shape","id":"sh/1wjq5oju","slide":1,"bbox":[724,189,28,28]}
+{"kind":"textbox","id":"sh/gva9wji9","slide":1,"text":"Design","textPreview":"Design","textChars":6,"textLines":1,"bbox":[774,184,250,38]}
+{"kind":"shape","id":"sh/6lwry1wv","slide":1,"bbox":[738,228,0,42]}
+{"kind":"shape","id":"sh/7m5s76xg","slide":1,"bbox":[724,267,28,28]}
+{"kind":"textbox","id":"sh/sne90be1","slide":1,"text":"Build","textPreview":"Build","textChars":5,"textLines":1,"bbox":[774,262,250,38]}
+{"kind":"shape","id":"sh/tona9gfm","slide":1,"bbox":[738,306,0,42]}
+{"kind":"shape","id":"sh/yxcruhwz","slide":1,"bbox":[724,345,28,28]}
+{"kind":"textbox","id":"sh/jy5s3mxk","slide":1,"text":"Deploy","textPreview":"Deploy","textChars":6,"textLines":1,"bbox":[774,340,250,38]}
+{"kind":"shape","id":"sh/kze9wrep","slide":1,"bbox":[738,384,0,42]}
+{"kind":"shape","id":"sh/lkna5wfa","slide":1,"bbox":[724,423,28,28]}
+{"kind":"textbox","id":"sh/2tgb6lw3","slide":1,"text":"Verify","textPreview":"Verify","textChars":6,"textLines":1,"bbox":[774,418,250,38]}
+{"kind":"shape","id":"sh/3upsfqxo","slide":1,"bbox":[738,462,0,42]}
+{"kind":"shape","id":"sh/zy1orid0","slide":1,"bbox":[724,501,28,28]}
+{"kind":"textbox","id":"sh/ex87ydcf","slide":1,"text":"Learn","textPreview":"Learn","textChars":5,"textLines":1,"bbox":[774,496,250,38]}
+{"kind":"textbox","id":"sh/10j6tsv6","slide":1,"text":"Good Shepherd Azure delivery path","textPreview":"Good Shepherd Azure delivery path","textChars":33,"textLines":1,"bbox":[724,555,420,36]}
+{"kind":"textbox","id":"sh/0zap0nul","slide":1,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1184,659,55,26]}
+{"kind":"notes","id":"nt/ydaaqd","slide":1,"text":"Open by positioning AIDL as the lifecycle and Ansible as the control point.\nEmphasize that the GS project already contains the pieces for an auditable release path.\n\n[Sources]\n- README.md, 'AI-DLC Workflow with Ansible at the Centre', lines 1-42.\n- README.md, 'Simple narrative', lines 75-82.\n- README.md, 'GS POV Harness Agent Azure Deployment', lines 85-91."}
+{"kind":"slide","id":"sl/socsyp","slide":2,"title":"AIDL turns intent into controlled delivery work","textShapes":10}
+{"kind":"textbox","id":"sh/lon690b6","slide":2,"text":"AIDL turns intent into controlled delivery work","textPreview":"AIDL turns intent into controlled delivery work","textChars":47,"textLines":1,"bbox":[41,42,1110,76]}
+{"kind":"shape","id":"sh/ylw7elsv","slide":2,"bbox":[41,138,1110,0]}
+{"kind":"textbox","id":"sh/zm5o7qtg","slide":2,"text":"AIDL contribution","textPreview":"AIDL contribution","textChars":17,"textLines":1,"bbox":[72,184,500,36]}
+{"kind":"shape","id":"sh/cjupcbap","slide":2,"bbox":[74,253,10,10]}
+{"kind":"textbox","id":"sh/dkn65gba","slide":2,"text":"Converts business change into acceptance criteria and target state.","textPreview":"Converts business change into acceptance criteria and target state.","textChars":67,"textLines":1,"bbox":[100,246,474,68]}
+{"kind":"shape","id":"sh/qxcnalsj","slide":2,"bbox":[74,331,10,10]}
+{"kind":"textbox","id":"sh/bylo36t4","slide":2,"text":"Drafts task breakdowns, playbook structure, and environment variables.","textPreview":"Drafts task breakdowns, playbook structure, and environment variables.","textChars":70,"textLines":1,"bbox":[100,324,474,68]}
+{"kind":"shape","id":"sh/4vu58bat","slide":2,"bbox":[74,409,10,10]}
+{"kind":"textbox","id":"sh/pw361gbe","slide":2,"text":"Surfaces review points for risky changes, secrets, and production promotion.","textPreview":"Surfaces review points for risky changes, secrets, and production promotion.","textChars":76,"textLines":1,"bbox":[100,402,474,68]}
+{"kind":"textbox","id":"sh/lo7e9s3i","slide":2,"text":"GS project expression","textPreview":"GS project expression","textChars":21,"textLines":1,"bbox":[680,184,500,36]}
+{"kind":"shape","id":"sh/0nyd0n2x","slide":2,"bbox":[682,253,10,10]}
+{"kind":"textbox","id":"sh/zmpw7ilc","slide":2,"text":"A single deployment playbook handles preflight, source staging, Azure auth, deploy, and verify.","textPreview":"A single deployment playbook handles preflight, source staging, Azure auth, deploy, and verify.","textChars":95,"textLines":1,"bbox":[708,246,484,68]}
+{"kind":"shape","id":"sh/ylgvydkr","slide":2,"bbox":[682,331,10,10]}
+{"kind":"textbox","id":"sh/dk7e5836","slide":2,"text":"Dev and staging JSON files make environment promotion explicit.","textPreview":"Dev and staging JSON files make environment promotion explicit.","textChars":63,"textLines":1,"bbox":[708,324,484,68]}
+{"kind":"shape","id":"sh/cjydw321","slide":2,"bbox":[682,409,10,10]}
+{"kind":"textbox","id":"sh/bipw3ylg","slide":2,"text":"The console lets teams choose a bastion and watch live Ansible stages.","textPreview":"The console lets teams choose a bastion and watch live Ansible stages.","textChars":70,"textLines":1,"bbox":[708,402,484,68]}
+{"kind":"textbox","id":"sh/qhgvutkv","slide":2,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1184,659,55,26]}
+{"kind":"notes","id":"nt/socsyp","slide":2,"text":"Use this slide to connect the AI-DLC concept to concrete GS repository assets.\nThe key message is that AIDL is useful when its output becomes versioned, reviewable automation.\n\n[Sources]\n- README.md, 'What the flow does', lines 5-24.\n- README.md, 'Deployment Console', lines 229-259.\n- config/environments/dev.json and config/environments/staging.json."}
+{"kind":"slide","id":"sl/s9akky","slide":3,"title":"Ansible makes the GS release path repeatable","textShapes":14}
+{"kind":"textbox","id":"sh/yp8r2dwz","slide":3,"text":"Ansible makes the GS release path repeatable","textPreview":"Ansible makes the GS release path repeatable","textChars":44,"textLines":1,"bbox":[41,42,1110,76]}
+{"kind":"textbox","id":"sh/lszaxsva","slide":3,"text":"The same playbook runs from a Linux bastion, stages code, authenticates to Azure, deploys, and verifies the live app.","textPreview":"The same playbook runs from a Linux bastion, stages code, authenticates to Azure, deploys, and verifies the live app.","textChars":117,"textLines":1,"bbox":[41,122,980,46]}
+{"kind":"shape","id":"sh/krq94nep","slide":3,"bbox":[52,250,200,116]}
+{"kind":"textbox","id":"sh/7ehszidg","slide":3,"text":"Preflight","textPreview":"Preflight","textChars":9,"textLines":1,"bbox":[70,266,164,30]}
+{"kind":"textbox","id":"sh/6d8r6xwv","slide":3,"text":"Validate settings and bootstrap bastion packages.","textPreview":"Validate settings and bootstrap bastion packages.","textChars":49,"textLines":1,"bbox":[70,302,164,48]}
+{"kind":"shape","id":"sh/tgja1svm","slide":3,"bbox":[290,250,200,116]}
+{"kind":"textbox","id":"sh/8fat8ne1","slide":3,"text":"Source","textPreview":"Source","textChars":6,"textLines":1,"bbox":[308,266,164,30]}
+{"kind":"textbox","id":"sh/nixsnydc","slide":3,"text":"Use copy, git, or existing checkout strategy.","textPreview":"Use copy, git, or existing checkout strategy.","textChars":45,"textLines":1,"bbox":[308,302,164,48]}
+{"kind":"shape","id":"sh/mhorutwr","slide":3,"bbox":[528,250,200,116]}
+{"kind":"textbox","id":"sh/8re10r21","slide":3,"text":"Azure auth","textPreview":"Azure auth","textChars":10,"textLines":1,"bbox":[546,266,164,30]}
+{"kind":"textbox","id":"sh/9sni9c3m","slide":3,"text":"Use existing login, managed identity, or service principal.","textPreview":"Use existing login, managed identity, or service principal.","textChars":59,"textLines":1,"bbox":[546,302,164,48]}
+{"kind":"shape","id":"sh/mpcjyhkb","slide":3,"bbox":[766,250,200,116]}
+{"kind":"textbox","id":"sh/nq507mlg","slide":3,"text":"Deploy","textPreview":"Deploy","textChars":6,"textLines":1,"bbox":[784,266,164,30]}
+{"kind":"textbox","id":"sh/wve14r2d","slide":3,"text":"Run app-only update or Terraform-backed stack flow.","textPreview":"Run app-only update or Terraform-backed stack flow.","textChars":51,"textLines":1,"bbox":[784,302,164,48]}
+{"kind":"shape","id":"sh/xwn2dw3y","slide":3,"bbox":[1004,250,200,116]}
+{"kind":"textbox","id":"sh/atwj2hk7","slide":3,"text":"Verify","textPreview":"Verify","textChars":6,"textLines":1,"bbox":[1022,266,164,30]}
+{"kind":"textbox","id":"sh/vu5kbmls","slide":3,"text":"Check Container App revision and application endpoints.","textPreview":"Check Container App revision and application endpoints.","textChars":55,"textLines":1,"bbox":[1022,302,164,48]}
+{"kind":"shape","id":"sh/czu1sn2t","slide":3,"bbox":[257,300,26,16]}
+{"kind":"shape","id":"sh/d03i1s3e","slide":3,"bbox":[495,300,26,16]}
+{"kind":"shape","id":"sh/tgvy5ovi","slide":3,"bbox":[733,300,26,16]}
+{"kind":"shape","id":"sh/svmhwjex","slide":3,"bbox":[971,300,26,16]}
+{"kind":"shape","id":"sh/rutg3edc","slide":3,"bbox":[110,482,1058,86]}
+{"kind":"textbox","id":"sh/6tkzu9wr","slide":3,"text":"Delivery benefit: one automation contract can be run by a person, the UI console, or a CI/CD runner.","textPreview":"Delivery benefit: one automation contract can be run by a person, the UI console, or a CI/CD runner.","textChars":100,"textLines":1,"bbox":[134,506,1000,40]}
+{"kind":"textbox","id":"sh/1kvy98ve","slide":3,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1184,659,55,26]}
+{"kind":"notes","id":"nt/s9akky","slide":3,"text":"Walk left to right as the operational delivery path.\nCall out that source staging was intentionally designed to avoid requiring GitHub keys on the bastion.\n\n[Sources]\n- README.md, GS deployment prerequisites and source strategies, lines 100-137.\n- playbooks/deploy_gs_pov_harness_agent.yml task sequence: preflight, source sync, Azure login, deploy, verify.\n- README.md, Terraform failure skip behavior, lines 197-204."}
+{"kind":"slide","id":"sl/q2cqzs","slide":4,"title":"Workflow architecture keeps control close to delivery","textShapes":12}
+{"kind":"textbox","id":"sh/6po3i18b","slide":4,"text":"Workflow architecture keeps control close to delivery","textPreview":"Workflow architecture keeps control close to delivery","textChars":53,"textLines":1,"bbox":[41,42,1110,76]}
+{"kind":"textbox","id":"sh/tsfmtg7m","slide":4,"text":"AIDL shapes the work; CI chooses the gate; Ansible executes from the bastion; Azure returns verification evidence.","textPreview":"AIDL shapes the work; CI chooses the gate; Ansible executes from the bastion; Azure returns verification evidence.","textChars":114,"textLines":1,"bbox":[41,122,1060,46]}
+{"kind":"shape","id":"sh/8r6lkbqh","slide":4,"bbox":[52,220,248,218]}
+{"kind":"textbox","id":"sh/vuh4v6ps","slide":4,"text":"AIDL + Git","textPreview":"AIDL + Git","textChars":10,"textLines":1,"bbox":[70,240,212,34]}
+{"kind":"textbox","id":"sh/ut83m187","slide":4,"text":"Intent\nAcceptance criteria\nPlaybook changes\nEnvironment vars","textPreview":"Intent | Acceptance criteria | Playbook changes | Environment vars","textChars":60,"textLines":4,"bbox":[70,296,212,126]}
+{"kind":"shape","id":"sh/hwzmxg7y","slide":4,"bbox":[348,220,248,218]}
+{"kind":"textbox","id":"sh/gvqlobqd","slide":4,"text":"CI/CD runner","textPreview":"CI/CD runner","textChars":12,"textLines":1,"bbox":[366,240,212,34]}
+{"kind":"textbox","id":"sh/3yh4zqp4","slide":4,"text":"Syntax and lint\nEnv selection\nTrigger playbook\nStore evidence","textPreview":"Syntax and lint | Env selection | Trigger playbook | Store evidence","textChars":61,"textLines":4,"bbox":[366,296,212,126]}
+{"kind":"shape","id":"sh/ix83ql8j","slide":4,"bbox":[644,220,248,218]}
+{"kind":"textbox","id":"sh/wj2xcre5","slide":4,"text":"Linux bastion","textPreview":"Linux bastion","textChars":13,"textLines":1,"bbox":[662,240,212,34]}
+{"kind":"textbox","id":"sh/xkbylwvq","slide":4,"text":"Ansible controller\nSource sync\nAzure CLI auth\nDeployment logs","textPreview":"Ansible controller | Source sync | Azure CLI auth | Deployment logs","textChars":61,"textLines":4,"bbox":[662,296,212,126]}
+{"kind":"shape","id":"sh/axkfahwz","slide":4,"bbox":[940,220,248,218]}
+{"kind":"textbox","id":"sh/bitgjmdk","slide":4,"text":"Azure platform","textPreview":"Azure platform","textChars":14,"textLines":1,"bbox":[958,240,212,34]}
+{"kind":"textbox","id":"sh/kn2xgreh","slide":4,"text":"ACR image build\nContainer App\nPostgreSQL\nHealth endpoints","textPreview":"ACR image build | Container App | PostgreSQL | Health endpoints","textChars":57,"textLines":4,"bbox":[958,296,212,126]}
+{"kind":"shape","id":"sh/lovypwvm","slide":4,"bbox":[310,315,28,18]}
+{"kind":"shape","id":"sh/ylkfehwb","slide":4,"bbox":[606,315,28,18]}
+{"kind":"shape","id":"sh/jmtgnmdw","slide":4,"bbox":[902,315,28,18]}
+{"kind":"shape","id":"sh/8rmxkbed","slide":4,"bbox":[116,514,930,82]}
+{"kind":"textbox","id":"sh/tsvytgvy","slide":4,"text":"Feedback loop: deployment output, failed stages, endpoint checks, and review decisions feed the next AIDL iteration.","textPreview":"Feedback loop: deployment output, failed stages, endpoint checks, and review decisions feed the next AIDL iteration.","textChars":116,"textLines":1,"bbox":[144,538,850,48]}
+{"kind":"shape","id":"sh/hw76hcjq","slide":4,"bbox":[1058,544,62,22]}
+{"kind":"textbox","id":"sh/gvypo725","slide":4,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1184,659,55,26]}
+{"kind":"notes","id":"nt/q2cqzs","slide":4,"text":"Use this as the architecture slide: it shows where AIDL, CI, Ansible, the bastion, and Azure each own part of delivery.\nThe important design choice is that Ansible remains the execution contract, whether triggered by a person, the UI, or CI.\n\n[Sources]\n- README.md, 'Core components', lines 30-42.\n- README.md, 'Deployment Console', lines 229-259.\n- README.md, 'Dev Bastion Infrastructure', lines 264-300.\n- playbooks/deploy_gs_pov_harness_agent.yml task sequence and Azure verification tasks."}
+{"kind":"slide","id":"sl/5aqc42","slide":5,"title":"In CI, Ansible becomes the promotion contract","textShapes":23}
+{"kind":"textbox","id":"sh/y1wvipsz","slide":5,"text":"In CI, Ansible becomes the promotion contract","textPreview":"In CI, Ansible becomes the promotion contract","textChars":45,"textLines":1,"bbox":[41,42,1110,76]}
+{"kind":"textbox","id":"sh/l47utkbq","slide":5,"text":"AIDL improves the work entering the pipeline; Ansible standardizes what the pipeline actually does.","textPreview":"AIDL improves the work entering the pipeline; Ansible standardizes what the pipeline actually does.","textChars":99,"textLines":1,"bbox":[41,122,980,46]}
+{"kind":"shape","id":"sh/k3ydkza5","slide":5,"bbox":[54,198,190,78]}
+{"kind":"textbox","id":"sh/by5cnato","slide":5,"text":"CI moment","textPreview":"CI moment","textChars":9,"textLines":1,"bbox":[68,212,162,48]}
+{"kind":"shape","id":"sh/axwve5c3","slide":5,"bbox":[244,198,340,78]}
+{"kind":"textbox","id":"sh/x0nupkbe","slide":5,"text":"AIDL contribution","textPreview":"AIDL contribution","textChars":17,"textLines":1,"bbox":[258,212,312,48]}
+{"kind":"shape","id":"sh/wzedgfa9","slide":5,"bbox":[584,198,360,78]}
+{"kind":"textbox","id":"sh/na5cjatc","slide":5,"text":"Ansible control","textPreview":"Ansible control","textChars":15,"textLines":1,"bbox":[598,212,332,48]}
+{"kind":"shape","id":"sh/m9cba5cr","slide":5,"bbox":[944,198,250,78]}
+{"kind":"textbox","id":"sh/cjy5gfm1","slide":5,"text":"Delivery outcome","textPreview":"Delivery outcome","textChars":16,"textLines":1,"bbox":[958,212,222,48]}
+{"kind":"shape","id":"sh/dk76pk3m","slide":5,"bbox":[54,276,190,78]}
+{"kind":"textbox","id":"sh/qhgne54v","slide":5,"text":"Pull request","textPreview":"Pull request","textChars":12,"textLines":1,"bbox":[68,290,162,48]}
+{"kind":"shape","id":"sh/riponalg","slide":5,"bbox":[244,276,340,78]}
+{"kind":"textbox","id":"sh/4fy5cvmp","slide":5,"text":"Generate criteria, risks, and test ideas.","textPreview":"Generate criteria, risks, and test ideas.","textChars":41,"textLines":1,"bbox":[258,290,312,48]}
+{"kind":"shape","id":"sh/pg76l03a","slide":5,"bbox":[584,276,360,78]}
+{"kind":"textbox","id":"sh/2dgnal4z","slide":5,"text":"Run syntax, lint, and idempotency checks.","textPreview":"Run syntax, lint, and idempotency checks.","textChars":41,"textLines":1,"bbox":[598,290,332,48]}
+{"kind":"shape","id":"sh/3ep4jqlk","slide":5,"bbox":[944,276,250,78]}
+{"kind":"textbox","id":"sh/8bi5ozm9","slide":5,"text":"Automatable review gate.","textPreview":"Automatable review gate.","textChars":24,"textLines":1,"bbox":[958,290,222,48]}
+{"kind":"shape","id":"sh/9cb6x43u","slide":5,"bbox":[54,354,190,78]}
+{"kind":"textbox","id":"sh/h876hkvy","slide":5,"text":"Dev deploy","textPreview":"Dev deploy","textChars":10,"textLines":1,"bbox":[68,368,162,48]}
+{"kind":"shape","id":"sh/w7y58zed","slide":5,"bbox":[244,354,340,78]}
+{"kind":"textbox","id":"sh/v65ofuds","slide":5,"text":"Translate change intent into vars and runbook updates.","textPreview":"Translate change intent into vars and runbook updates.","textChars":54,"textLines":1,"bbox":[258,368,312,48]}
+{"kind":"shape","id":"sh/u5wn6pw7","slide":5,"bbox":[584,354,360,78]}
+{"kind":"textbox","id":"sh/94nmdkvm","slide":5,"text":"Run playbook against dev bastion and dev env file.","textPreview":"Run playbook against dev bastion and dev env file.","textChars":50,"textLines":1,"bbox":[598,368,332,48]}
+{"kind":"shape","id":"sh/83e54fe1","slide":5,"bbox":[944,354,250,78]}
+{"kind":"textbox","id":"sh/7254badw","slide":5,"text":"Fast, repeatable validation.","textPreview":"Fast, repeatable validation.","textChars":28,"textLines":1,"bbox":[958,368,222,48]}
+{"kind":"shape","id":"sh/m1wn25wb","slide":5,"bbox":[54,432,190,78]}
+{"kind":"textbox","id":"sh/l0nm90vq","slide":5,"text":"Stage promote","textPreview":"Stage promote","textChars":13,"textLines":1,"bbox":[68,446,162,48]}
+{"kind":"shape","id":"sh/0zu50fe5","slide":5,"bbox":[244,432,340,78]}
+{"kind":"textbox","id":"sh/q5s3a1c3","slide":5,"text":"Summarize changes and unresolved risks.","textPreview":"Summarize changes and unresolved risks.","textChars":39,"textLines":1,"bbox":[258,446,312,48]}
+{"kind":"shape","id":"sh/b61k36to","slide":5,"bbox":[584,432,360,78]}
+{"kind":"textbox","id":"sh/c7alcbut","slide":5,"text":"Reuse same playbook with staging variables.","textPreview":"Reuse same playbook with staging variables.","textChars":43,"textLines":1,"bbox":[598,446,332,48]}
+{"kind":"shape","id":"sh/d8325gbe","slide":5,"bbox":[944,432,250,78]}
+{"kind":"textbox","id":"sh/2hsj61cr","slide":5,"text":"Same logic, new target.","textPreview":"Same logic, new target.","textChars":23,"textLines":1,"bbox":[958,446,222,48]}
+{"kind":"shape","id":"sh/3i1kz6tc","slide":5,"bbox":[54,510,190,78]}
+{"kind":"textbox","id":"sh/o3al8bux","slide":5,"text":"Release gate","textPreview":"Release gate","textChars":12,"textLines":1,"bbox":[68,524,162,48]}
+{"kind":"shape","id":"sh/p4j21wbi","slide":5,"bbox":[244,510,340,78]}
+{"kind":"textbox","id":"sh/ed8j2hcv","slide":5,"text":"Explain failure signals and next fixes.","textPreview":"Explain failure signals and next fixes.","textChars":39,"textLines":1,"bbox":[258,524,312,48]}
+{"kind":"shape","id":"sh/fehkvmtg","slide":5,"bbox":[584,510,360,78]}
+{"kind":"textbox","id":"sh/7q1g72xw","slide":5,"text":"Verify endpoints and Container App revision health.","textPreview":"Verify endpoints and Container App revision health.","textChars":51,"textLines":1,"bbox":[598,524,332,48]}
+{"kind":"shape","id":"sh/65szexwb","slide":5,"bbox":[944,510,250,78]}
+{"kind":"textbox","id":"sh/tsjy9sf2","slide":5,"text":"Evidence-backed approval.","textPreview":"Evidence-backed approval.","textChars":25,"textLines":1,"bbox":[958,524,222,48]}
+{"kind":"textbox","id":"sh/srahg7eh","slide":5,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1184,659,55,26]}
+{"kind":"notes","id":"nt/5aqc42","slide":5,"text":"This slide is the CI/CD operating answer: let AIDL shape the inputs and Ansible enforce the delivery contract.\nEmphasize that dev/staging config files make promotion explicit without changing the playbook logic.\n\n[Sources]\n- README.md, 'Core components', lines 30-42.\n- README.md, validation and CI/CD flow, lines 15-23 and 38-41.\n- config/environments/dev.json and config/environments/staging.json."}
+{"kind":"slide","id":"sl/13izyy","slide":6,"title":"Use the pattern as a delivery operating model","textShapes":15}
+{"kind":"textbox","id":"sh/lgzulofm","slide":6,"text":"Use the pattern as a delivery operating model","textPreview":"Use the pattern as a delivery operating model","textChars":45,"textLines":1,"bbox":[41,42,1110,76]}
+{"kind":"shape","id":"sh/yd8bq9gv","slide":6,"bbox":[70,165,360,355]}
+{"kind":"textbox","id":"sh/jehcjehg","slide":6,"text":"Standardize","textPreview":"Standardize","textChars":11,"textLines":1,"bbox":[98,198,300,34]}
+{"kind":"shape","id":"sh/83atw3yx","slide":6,"bbox":[100,267,10,10]}
+{"kind":"textbox","id":"sh/t4jupofi","slide":6,"text":"Keep one playbook path across environments.","textPreview":"Keep one playbook path across environments.","textChars":43,"textLines":1,"bbox":[126,260,262,60]}
+{"kind":"shape","id":"sh/6hsbutg7","slide":6,"bbox":[100,337,10,10]}
+{"kind":"textbox","id":"sh/7i1cnyxs","slide":6,"text":"Treat env files and inventory as release inputs.","textPreview":"Treat env files and inventory as release inputs.","textChars":48,"textLines":1,"bbox":[126,330,262,60]}
+{"kind":"shape","id":"sh/g7at03y9","slide":6,"bbox":[100,407,10,10]}
+{"kind":"textbox","id":"sh/h83ut8fu","slide":6,"text":"Make bastion source strategy explicit.","textPreview":"Make bastion source strategy explicit.","textChars":38,"textLines":1,"bbox":[126,400,262,60]}
+{"kind":"shape","id":"sh/p87mpw32","slide":6,"bbox":[460,165,360,355]}
+{"kind":"textbox","id":"sh/o7ylgr2h","slide":6,"text":"Govern","textPreview":"Govern","textChars":6,"textLines":1,"bbox":[488,198,300,34]}
+{"kind":"shape","id":"sh/n6p4n6lw","slide":6,"bbox":[490,267,10,10]}
+{"kind":"textbox","id":"sh/25g3e1kb","slide":6,"text":"Approve RBAC, secrets, and risky infra.","textPreview":"Approve RBAC, secrets, and risky infra.","textChars":39,"textLines":1,"bbox":[516,260,262,60]}
+{"kind":"shape","id":"sh/xcrmdg3y","slide":6,"bbox":[490,337,10,10]}
+{"kind":"textbox","id":"sh/cbi5kb2d","slide":6,"text":"Let CI run validation before promotion.","textPreview":"Let CI run validation before promotion.","textChars":39,"textLines":1,"bbox":[516,330,262,60]}
+{"kind":"shape","id":"sh/bap4b6l8","slide":6,"bbox":[490,407,10,10]}
+{"kind":"textbox","id":"sh/a9gni1kn","slide":6,"text":"Keep identity paths clear.","textPreview":"Keep identity paths clear.","textChars":26,"textLines":1,"bbox":[516,400,262,60]}
+{"kind":"shape","id":"sh/dgnmhc3u","slide":6,"bbox":[850,165,360,355]}
+{"kind":"textbox","id":"sh/sfel8729","slide":6,"text":"Learn","textPreview":"Learn","textChars":5,"textLines":1,"bbox":[878,198,300,34]}
+{"kind":"shape","id":"sh/4ji5ora5","slide":6,"bbox":[880,267,10,10]}
+{"kind":"textbox","id":"sh/5krmxcbq","slide":6,"text":"Feed deployment logs back into AIDL prompts.","textPreview":"Feed deployment logs back into AIDL prompts.","textChars":44,"textLines":1,"bbox":[906,260,262,60]}
+{"kind":"shape","id":"sh/ih03mhsz","slide":6,"bbox":[880,337,10,10]}
+{"kind":"textbox","id":"sh/ji94vmtk","slide":6,"text":"Convert recurring fixes into playbook updates.","textPreview":"Convert recurring fixes into playbook updates.","textChars":46,"textLines":1,"bbox":[906,330,262,60]}
+{"kind":"shape","id":"sh/sni5sra1","slide":6,"bbox":[880,407,10,10]}
+{"kind":"textbox","id":"sh/torm1wbm","slide":6,"text":"Use verification as delivery evidence.","textPreview":"Use verification as delivery evidence.","textChars":38,"textLines":1,"bbox":[906,400,262,60]}
+{"kind":"textbox","id":"sh/6l0nqhsb","slide":6,"text":"Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and promote with the same Ansible playbook plus environment-specific vars.","textPreview":"Practical next step: wire CI to run syntax/lint on PRs, deploy to dev on merge, and promote with the same Ansible playbook plus environme...","textChars":154,"textLines":1,"bbox":[70,590,1040,58]}
+{"kind":"textbox","id":"sh/rm94zmtw","slide":6,"text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1184,659,55,26]}
+{"kind":"notes","id":"nt/13izyy","slide":6,"text":"Close by making the recommendation practical: keep AI-assisted planning, Ansible execution, and CI evidence connected.\nThis is not a separate process; it is a disciplined way to use the assets already in the GS automation repo.\n\n[Sources]\n- README.md, 'Suggested lifecycle', lines 44-72.\n- README.md, 'Example control points', lines 67-73.\n- README.md, deployment console and bastion infrastructure sections, lines 229-300."}

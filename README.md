@@ -197,6 +197,10 @@ ansible-playbook -i inventory/bastion.yml playbooks/deploy_gs_pov_harness_agent.
 Terraform mode provisions or updates the Azure stack under the app repo's
 `infra/terraform` directory, builds the container image in the generated ACR,
 applies the image to the Container App, and then verifies the application.
+By default, if either Terraform apply step fails, the playbook records the
+failure, skips the remaining Terraform deployment and verification work, and
+finishes with a summary. Set `gs_skip_after_terraform_apply_failure=false` to
+restore strict failure behavior.
 
 Before running Terraform mode, ensure
 `{{ gs_app_repo_path }}/infra/terraform/terraform.tfvars` exists on the bastion

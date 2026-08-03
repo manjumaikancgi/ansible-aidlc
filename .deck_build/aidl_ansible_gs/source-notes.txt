@@ -1,0 +1,5 @@
+Deck sources are local repository files only.
+Primary source: README.md in ansible-aidlc.
+Supporting source: playbooks/deploy_gs_pov_harness_agent.yml.
+Supporting source: config/environments/dev.json and staging.json.
+Supporting source: deployment_console/server.py and infra/terraform/dev-bastion.
